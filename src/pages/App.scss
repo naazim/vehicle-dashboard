@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $bg-color;
+  background-color: $body-bg-color;
 }
 
 code {
@@ -15,24 +15,25 @@ code {
 
 .App {
   text-align: center;
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.fleet-main {
+  height: 100%;
+  display: flex;
+
 }
 
-
-.App-link {
-  color: #61dafb;
+.fleet-wrapper {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  background-color: $bg-color;
+  padding: $spacing-l;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fleet-map {
+  height: 200px;
+  width: 100%;
 }

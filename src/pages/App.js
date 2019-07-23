@@ -1,11 +1,17 @@
-import React from 'react';
-import Gauge from '../components/Gauge';
-import '../scss/main.scss';
+import React from "react";
+import Speedometer from "../components/Speedometer";
+import Map from "../components/Map";
+import "../scss/main.scss";
 
 function App() {
   return (
     <div className="App">
-      <Gauge />
+    <main className="fleet-main">
+      <div className="fleet-wrapper">
+        <Speedometer />
+        <Map className="fleet-map" />
+      </div>
+      </main>
     </div>
   );
 }

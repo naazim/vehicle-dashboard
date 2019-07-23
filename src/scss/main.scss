@@ -1,5 +1,8 @@
 @import "variables";
+@import "fonts";
 @import "base";
 @import "mixins";
 @import "animations";
 @import "../pages/app";
+@import "../components/Speedometer/_speedometer.scss";
+@import "../components/Map/_map.scss";
