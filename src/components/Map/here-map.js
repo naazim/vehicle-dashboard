@@ -14,9 +14,7 @@ class HereMap extends Component {
       zoom: props.zoom,
       theme: props.theme,
       style: props.style,
-    }
-
-    console.log(this.state)
+    };
   }
 
   // TODO: Add theme selection discussed later HERE
