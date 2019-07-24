@@ -1,32 +1,42 @@
-import React, { Component } from "react";
-import GoogleMapReact from "google-map-react";
-import MAP_THEME from "./map-theme";
-import car from  '../../assets/car.png';
+import React, { Component } from 'react';
 
-const VehicleIcon = () => <img src={car} alt="car icon" width="15" />;
+
 
 class Map extends Component {
-  static defaultProps = {
-    center: {
-      lat: 52.52,
-      lng: 13.4
-    },
-    zoom: 11,
-    styles: MAP_THEME
-  };
+
+  // For conciseness simply included all parameters in the querystring directly
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      url: 'https://image.maps.api.here.com/mia/1.6/mapview?w=600&h=300&z=10&t=5&poitxs=16&poitxc=black&poifc=yellow',
+      points: [],
+    }
+  }
+
+  // Helper function to format list of points
+
+  getPOIList() {
+    if (this.state.points.length > 0) {
+      let param = '&poi=';
+      for (let poi in this.state.points) {
+        param += poi.latitude + ',' + poi.longitude;
+      }
+      return param;
+    }
+
+    return '';
+  }
+
+  // Render method builds the URL dynamically to fetch the image from the
+  // HERE Map Image API
 
   render() {
+    const {REACT_APP_MAP_APP_ID: appId, REACT_APP_MAP_APP_CODE: appCode} = process.env;
     return (
-      // Important! Always set the container height explicitly
-      <div className="fleet-map">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyBF_eoe4gPKXu4PM6RolxjUuT0syuj5ajE" }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <VehicleIcon lat={52.52} lng={13.4} />
-        </GoogleMapReact>
-      </div>
+      <img
+        src={`${this.state.url}&app_id=${appId}&app_code=${appCode+this.getPOIList()}`}
+        alt="Todo Map"/>
     );
   }
 }
