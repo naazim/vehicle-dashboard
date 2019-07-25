@@ -9,18 +9,19 @@ const settings = {
 };
 
 class Speedometer extends React.Component {
+  static progressBar;
+  
   componentDidMount() {
-    this.drawChart();
+    const charts = document.getElementById("chart");
+    this.progressBar = new CircularProgress(charts, settings);
+    this.progressBar.update([this.props.value]);
   }
 
-  drawChart = () => {
-    const charts = document.getElementById("chart");
-
-    const progress = new CircularProgress(charts, settings);
-    setInterval(function() {
-      progress.update([Math.floor(Math.random() * 100) + 1]);
-    }, 1000);
-  };
+  componentDidUpdate(prevProps) {
+    if (this.props.value !== prevProps.value) {
+      this.progressBar.update([this.props.value]);
+    }
+  }
 
   render() {
     return <div id="chart" className="fleet-speedometer" />;

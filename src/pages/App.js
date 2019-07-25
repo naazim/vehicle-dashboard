@@ -8,7 +8,7 @@ function App() {
     <div className="App">
     <main className="fleet-main">
       <div className="fleet-wrapper">
-        <Speedometer />
+        <Speedometer value={45} />
         <Map
           className="fleet-map"
           lat="42.345978"

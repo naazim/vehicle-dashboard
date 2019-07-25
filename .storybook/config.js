@@ -1,9 +1,10 @@
 import { configure, addParameters } from '@storybook/react';
 import vwTheme from './theme';
 
+const components = require.context('../src/components', true, /\.stories\.jsx?$/);
 
 function loadStories() {
-  require('../src/stories');
+  components.keys().forEach((filename) => components(filename))
 }
 
 addParameters({
