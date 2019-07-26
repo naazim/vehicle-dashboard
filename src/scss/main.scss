@@ -3,6 +3,14 @@
 @import "base";
 @import "mixins";
 @import "animations";
-@import "../pages/app";
+
+/* Components */
 @import "../components/Speedometer/_speedometer.scss";
 @import "../components/Map/_map.scss";
+
+/* Pages */
+@import "../pages/app";
+@import "../pages/Login/login";
+@import "../pages/Dashboard/dashboard";
+@import "../pages/FleetOverview/fleetOverview";
+@import "../pages/VehicleDetail/vehicleDetails";
