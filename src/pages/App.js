@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import logo from '../assets/vw-logo.svg';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Nav from '../components/Nav';
-import Dashboard from './Dashboard';
-import Login from './Login';
-import FleetOverview from './FleetOverview';
-import VehicleDetail from './VehicleDetail';
-import '../scss/main.scss';
+import React, { Component } from "react";
+import logo from "../assets/vw-logo.svg";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Nav from "../components/Nav";
+import Dashboard from "./Dashboard";
+import Login from "./Auth";
+import FleetOverview from "./FleetOverview";
+import VehicleDetail from "./VehicleDetail";
+import "../scss/main.scss";
 
 class App extends Component {
   render() {
