@@ -1,0 +1,40 @@
+.fleets {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fleets__btn {
+  padding: 1.5rem 1rem;
+  border-radius: 0;
+  border-width: 2px;
+  position: relative;
+  margin-bottom: -2px;
+  text-align: left;
+
+  &:hover, &focus {
+    background-color: $secondary-color;
+    color: $white;
+    border-color: $secondary-color;
+    z-index: 1;
+
+    .fleets__label {
+      background-color: $white;
+      color: $secondary-color;
+    }
+  }
+}
+
+.fleets__label {
+  background-color: $primary-color;
+  color: $white;
+  width: 50px;
+  padding: 2px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  float: right;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}

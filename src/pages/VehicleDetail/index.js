@@ -4,7 +4,7 @@ import Map from "../../components/Map";
 
 const VehicleDetail = () => {
   return (
-    <div className="fleet-wrapper">
+    <div className="detail-wrapper">
       <Speedometer value={45} />
       <Map className="fleet-map" lat="42.345978" lng="-83.0405" />
     </div>

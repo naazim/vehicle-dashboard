@@ -30,3 +30,9 @@ button:not(:disabled) {
   background-color: $primary-color;
   border-color: $primary-color;
 }
+
+.btn-light {
+  color: $primary-color;
+  background-color: $white;
+  border-color: $primary-color;
+}
