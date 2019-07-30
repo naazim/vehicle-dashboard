@@ -47,22 +47,18 @@ class Dashboard extends Component {
   render() {
     const { fleets, fleetVehicles, vehicle: vehicleData } = this.state;
     return (
-      <main className="fleet-main">
-        <div className="fleet-dashboard">
-          <Fleets data={fleets} onClick={this.onFleetClick} />
-        </div>
-        <div className="fleet-vehicles">
-          {fleetVehicles &&
-            fleetVehicles.map(vehicle => (
-              <Vehicle
-                key={vehicle.vehicleId}
-                vehicleData={vehicle}
-                onClick={this.onVehicleClick}
-              />
-            ))}
-        </div>
+      <div className="fleet-dashboard">
+        <Fleets data={fleets} onClick={this.onFleetClick} />
+        {fleetVehicles &&
+          fleetVehicles.map(vehicle => (
+            <Vehicle
+              key={vehicle.vehicleId}
+              vehicleData={vehicle}
+              onClick={this.onVehicleClick}
+            />
+          ))}
         {vehicleData && <VehicleDetail vehicleData={vehicleData} />}
-      </main>
+      </div>
     );
   }
 }

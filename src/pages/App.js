@@ -14,10 +14,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="fleet-container">
+        <>
           <PrivateRoute exact path="/" component={Home} />
           <Route path="/login" component={LoginPage} />
-        </div>
+        </>
       </Router>
     );
   }
