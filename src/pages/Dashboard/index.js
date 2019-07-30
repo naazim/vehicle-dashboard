@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Fleets } from '../../components/Fleets';
-import { Vehicle } from '../../components/Vehicle';
 import { VehicleDetail } from '../../components/VehicleDetail';
 
 const API_FLEETS_URL = '/fleet';
@@ -48,15 +47,12 @@ class Dashboard extends Component {
     const { fleets, fleetVehicles, vehicle: vehicleData } = this.state;
     return (
       <div className="fleet-dashboard">
-        <Fleets data={fleets} onClick={this.onFleetClick} />
-        {fleetVehicles &&
-          fleetVehicles.map(vehicle => (
-            <Vehicle
-              key={vehicle.vehicleId}
-              vehicleData={vehicle}
-              onClick={this.onVehicleClick}
-            />
-          ))}
+        <Fleets
+          data={fleets}
+          fleetVehicles={fleetVehicles}
+          onFleetClick={this.onFleetClick}
+          onVehicleClick={this.onVehicleClick}
+        />
         {vehicleData && <VehicleDetail vehicleData={vehicleData} />}
       </div>
     );

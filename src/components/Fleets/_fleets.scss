@@ -2,6 +2,7 @@
   width: 300px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .fleets__btn {
@@ -11,6 +12,7 @@
   position: relative;
   margin-bottom: -2px;
   text-align: left;
+  width: 100%;
 
   &:hover, &focus {
     background-color: $secondary-color;

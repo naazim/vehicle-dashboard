@@ -1,5 +1,6 @@
 .fleet-dashboard {
   display: flex;
+  height: calc(100% - #{$header-height});
 }
 
 .fleet-vehicles {

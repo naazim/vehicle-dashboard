@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Vehicle = ({ vehicleData, onClick }) => {
+const Vehicle = ({ vehicleData, onVehicleClick }) => {
   const {
     vehicleId,
     licensePlateNumber,
@@ -13,8 +13,8 @@ const Vehicle = ({ vehicleData, onClick }) => {
   return (
     <button
       type="button"
-      className="vehicle"
-      onClick={() => onClick(vehicleId)}
+      className="fleet__vehicle"
+      onClick={() => onVehicleClick(vehicleId)}
     >
       <div>id: {vehicleId}</div>
       <div>number: {licensePlateNumber}</div>
