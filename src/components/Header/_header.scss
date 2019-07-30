@@ -1,0 +1,14 @@
+.fleet-header {
+  height: 60px;
+  background-color: $secondary-color;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-s;
+}
+
+.fleet-header__signout {
+  color: $white;
+  text-decoration: underline;
+}
