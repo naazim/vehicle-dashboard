@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Fleets from '../../components/Fleets';
-import Vehicle from '../../components/Vehicle';
-import VehicleDetail from '../../components/VehicleDetail';
+import { Fleets } from '../../components/Fleets';
+import { Vehicle } from '../../components/Vehicle';
+import { VehicleDetail } from '../../components/VehicleDetail';
+
 const API_FLEETS_URL = '/fleet';
 
 class Dashboard extends Component {
   state = {
-    user: {},
     fleets: [],
     fleetVehicles: [],
     vehicle: null
   };
 
   componentDidMount() {
-    this.setState({
-      user: JSON.parse(localStorage.getItem('user'))
-    });
-
     fetch(API_FLEETS_URL)
       .then(res => res.json())
       .then(data => {
@@ -50,13 +45,9 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { user, fleets, fleetVehicles, vehicle: vehicleData } = this.state;
+    const { fleets, fleetVehicles, vehicle: vehicleData } = this.state;
     return (
       <main className="fleet-main">
-        <h1>Hi {user.firstName}!</h1>
-        <p>
-          <Link to="/login">Logout</Link>
-        </p>
         <div className="fleet-dashboard">
           <Fleets data={fleets} onClick={this.onFleetClick} />
         </div>
@@ -78,4 +69,4 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {};
 
-export default Dashboard;
+export { Dashboard };

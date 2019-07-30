@@ -1,6 +1,6 @@
-import React from "react";
-import clsx from "clsx";
-import Button from "../Button";
+import React from 'react';
+import clsx from 'clsx';
+import Button from '../Button';
 
 const Fleets = ({ data: fleets, onClick }) => (
   <div className="fleets">
@@ -13,8 +13,8 @@ const Fleets = ({ data: fleets, onClick }) => (
         {fleet.fleetName}
         <label
           className={clsx(
-            "fleets__label",
-            fleet.fleetStatus === "Active" && "fleets__label--active"
+            'fleets__label',
+            fleet.fleetStatus === 'Active' && 'fleets__label--active'
           )}
         >
           {fleet.noOfVehicles}
@@ -24,4 +24,4 @@ const Fleets = ({ data: fleets, onClick }) => (
   </div>
 );
 
-export default Fleets;
+export { Fleets };

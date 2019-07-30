@@ -6,12 +6,13 @@
 @import 'form';
 
 /* Components */
-@import '../components/Speedometer/_speedometer.scss';
-@import '../components/Map/_map.scss';
-@import '../components/Button/_button.scss';
-@import '../components/Fleets/_fleets.scss';
-@import '../components/Vehicle/_vehicle.scss';
-@import '../components/VehicleDetail/_vehicle-detail.scss';
+@import '../components/Speedometer/speedometer';
+@import '../components/Map/map';
+@import '../components/Header/header';
+@import '../components/Button/button';
+@import '../components/Fleets/fleets';
+@import '../components/Vehicle/vehicle';
+@import '../components/VehicleDetail/vehicle-detail';
 
 /* Pages */
 @import '../pages/app';

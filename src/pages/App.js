@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import logo from "../assets/vw-logo.svg";
 // import Nav from "../components/Nav";
-import Dashboard from './Dashboard';
+import Home from './Home';
 // import Login from "./Auth";
 // import FleetOverview from "./FleetOverview";
 // import VehicleDetail from "./VehicleDetail";
@@ -14,8 +14,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <PrivateRoute exact path="/" component={Dashboard} />
+        <div className="fleet-container">
+          <PrivateRoute exact path="/" component={Home} />
           <Route path="/login" component={LoginPage} />
         </div>
       </Router>

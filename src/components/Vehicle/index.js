@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Vehicle = ({ vehicleData, onClick }) => {
   const {
@@ -26,4 +26,4 @@ const Vehicle = ({ vehicleData, onClick }) => {
   );
 };
 
-export default Vehicle;
+export { Vehicle };

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const VehicleDetail = ({ vehicleData }) => {
   const {
@@ -38,4 +38,4 @@ const VehicleDetail = ({ vehicleData }) => {
   );
 };
 
-export default VehicleDetail;
+export { VehicleDetail };
