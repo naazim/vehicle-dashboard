@@ -1,22 +1,22 @@
-@import "variables";
-@import "fonts";
-@import "base";
-@import "mixins";
-@import "animations";
-@import "form";
+@import 'variables';
+@import 'fonts';
+@import 'base';
+@import 'mixins';
+@import 'animations';
+@import 'form';
 
 /* Components */
-@import "../components/Speedometer/_speedometer.scss";
-@import "../components/Map/_map.scss";
-@import "../components/Login/_login.scss";
-@import "../components/Button/_button.scss";
-@import "../components/Fleets/_fleets.scss";
-@import "../components/Vehicle/_vehicle.scss";
-@import "../components/VehicleDetail/_vehicle-detail.scss";
+@import '../components/Speedometer/_speedometer.scss';
+@import '../components/Map/_map.scss';
+@import '../components/Button/_button.scss';
+@import '../components/Fleets/_fleets.scss';
+@import '../components/Vehicle/_vehicle.scss';
+@import '../components/VehicleDetail/_vehicle-detail.scss';
 
 /* Pages */
-@import "../pages/app";
-@import "../pages/Auth/auth";
-@import "../pages/Dashboard/dashboard";
-@import "../pages/FleetOverview/fleetOverview";
-@import "../pages/VehicleDetail/vehicleDetails";
+@import '../pages/app';
+@import '../pages/Auth/auth';
+@import '../pages/LoginPage/login-page';
+@import '../pages/Dashboard/dashboard';
+@import '../pages/FleetOverview/fleetOverview';
+@import '../pages/VehicleDetail/vehicleDetails';

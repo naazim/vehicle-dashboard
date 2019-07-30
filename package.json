@@ -21,6 +21,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -33,6 +36,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "http://localhost:8080",
   "devDependencies": {
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-backgrounds": "^5.1.9",
@@ -42,7 +46,6 @@
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9"
   },
-  "proxy": "http://localhost:8080",
   "dependencies": {
     "clsx": "^1.0.4",
     "d3": "3",

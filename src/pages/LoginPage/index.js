@@ -1,5 +1,5 @@
-import React from "react";
-import { userService } from "../../services/user.service";
+import React from 'react';
+import { userService } from '../../services/user.service';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -8,11 +8,11 @@ class LoginPage extends React.Component {
     userService.logout();
 
     this.state = {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
       submitted: false,
       loading: false,
-      error: ""
+      error: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
     userService.login(username, password).then(
       user => {
         const { from } = this.props.location.state || {
-          from: { pathname: "/" }
+          from: { pathname: '/' }
         };
         this.props.history.push(from);
       },
@@ -50,23 +50,17 @@ class LoginPage extends React.Component {
   render() {
     const { username, password, submitted, loading, error } = this.state;
     return (
-      <div className="col-md-6 col-md-offset-3">
-        <div className="alert alert-info">
-          Username: test
-          <br />
-          Password: test
-        </div>
-        <h2>Login</h2>
+      <div className="fleet-login">
         <form name="form" onSubmit={this.handleSubmit}>
           <div
             className={
-              "form-group" + (submitted && !username ? " has-error" : "")
+              'form__group' + (submitted && !username ? ' has-error' : '')
             }
           >
             <label htmlFor="username">Username</label>
             <input
               type="text"
-              className="form-control"
+              className="form__control"
               name="username"
               value={username}
               onChange={this.handleChange}
@@ -77,13 +71,13 @@ class LoginPage extends React.Component {
           </div>
           <div
             className={
-              "form-group" + (submitted && !password ? " has-error" : "")
+              'form__group' + (submitted && !password ? ' has-error' : '')
             }
           >
             <label htmlFor="password">Password</label>
             <input
               type="password"
-              className="form-control"
+              className="form__control"
               name="password"
               value={password}
               onChange={this.handleChange}
@@ -92,7 +86,7 @@ class LoginPage extends React.Component {
               <div className="help-block">Password is required</div>
             )}
           </div>
-          <div className="form-group">
+          <div className="form__group">
             <button className="btn btn-primary" disabled={loading}>
               Login
               {loading && (
@@ -103,7 +97,7 @@ class LoginPage extends React.Component {
               )}
             </button>
           </div>
-          {error && <div className={"alert alert-danger"}>{error}</div>}
+          {error && <div className={'alert alert-danger'}>{error}</div>}
         </form>
       </div>
     );

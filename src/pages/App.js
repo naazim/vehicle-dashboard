@@ -1,31 +1,24 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import logo from "../assets/vw-logo.svg";
 // import Nav from "../components/Nav";
-// import Dashboard from "./Dashboard";
+import Dashboard from './Dashboard';
 // import Login from "./Auth";
 // import FleetOverview from "./FleetOverview";
 // import VehicleDetail from "./VehicleDetail";
-import { PrivateRoute } from "../components/PrivateRoute";
-import { HomePage } from "./HomePage";
-import { LoginPage } from "./LoginPage";
-import "../scss/main.scss";
+import { PrivateRoute } from '../components/PrivateRoute';
+import { LoginPage } from './LoginPage';
+import '../scss/main.scss';
 
 class App extends Component {
   render() {
     return (
-      <div className="jumbotron">
-        <div className="container">
-          <div className="col-sm-8 col-sm-offset-2">
-            <Router>
-              <div>
-                <PrivateRoute exact path="/" component={HomePage} />
-                <Route path="/login" component={LoginPage} />
-              </div>
-            </Router>
-          </div>
+      <Router>
+        <div>
+          <PrivateRoute exact path="/" component={Dashboard} />
+          <Route path="/login" component={LoginPage} />
         </div>
-      </div>
+      </Router>
     );
   }
 }
