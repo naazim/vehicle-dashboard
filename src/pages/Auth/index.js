@@ -6,7 +6,6 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
-import { fakeAuth } from "../../util/fakeAuth";
 import Login from "../../components/Login";
 import Dashboard from "../../pages/Dashboard";
 
