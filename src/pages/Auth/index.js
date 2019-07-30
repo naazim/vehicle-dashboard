@@ -30,7 +30,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-const AuthButton = withRouter(({ history }) =>
+export const AuthButton = withRouter(({ history }) =>
   fakeAuth.isAuthenticated ? (
     <button
       onClick={() => {
@@ -58,7 +58,7 @@ export default function Auth() {
           </li>
         </ul>
         <Route path="/public" component={Public} />
-        <Route path="/login" component={Login} />
+        <Route path="/" component={Login} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
       </div>
     </Router>

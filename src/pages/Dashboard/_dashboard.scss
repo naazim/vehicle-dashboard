@@ -1,3 +1,8 @@
 .fleet-dashboard {
   display: flex;
 }
+
+.fleet-vehicles {
+  display: flex;
+  flex-direction: column;
+}

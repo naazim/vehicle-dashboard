@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import Fleets from "../../components/Fleets";
+import Vehicle from "../../components/Vehicle";
+import VehicleDetail from "../../components/VehicleDetail";
 const API_FLEETS_URL = "/fleet";
 
 class Dashboard extends Component {
   state = {
     fleets: [],
-    fleetVehicles: []
+    fleetVehicles: [],
+    vehicle: null
   };
 
   componentDidMount() {
@@ -18,26 +21,46 @@ class Dashboard extends Component {
   }
 
   onFleetClick = fleetId => {
-    console.log("clicked", fleetId);
     const API_FLEET_VEHICLES_URL = `/fleet/${fleetId}/vehicle`;
 
     fetch(API_FLEET_VEHICLES_URL)
       .then(res => res.json())
       .then(data => {
-        this.setState({ fleetVehicles: data.fleets });
+        this.setState({ fleetVehicles: data.vehicles });
+      })
+      .catch(console.log);
+  };
+
+  onVehicleClick = vehicleId => {
+    const API_VEHICLE_URL = `/vehicle/${vehicleId}`;
+
+    fetch(API_VEHICLE_URL)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ vehicle: data });
         console.log(data);
       })
       .catch(console.log);
   };
 
   render() {
-    const { fleets } = this.state;
+    const { fleets, fleetVehicles, vehicle: vehicleData } = this.state;
     return (
       <main className="fleet-main">
         <div className="fleet-dashboard">
           <Fleets data={fleets} onClick={this.onFleetClick} />
         </div>
-        <div className="fleet-vehicles"></div>
+        <div className="fleet-vehicles">
+          {fleetVehicles &&
+            fleetVehicles.map(vehicle => (
+              <Vehicle
+                key={vehicle.vehicleId}
+                vehicleData={vehicle}
+                onClick={this.onVehicleClick}
+              />
+            ))}
+        </div>
+        {vehicleData && <VehicleDetail vehicleData={vehicleData} />}
       </main>
     );
   }
