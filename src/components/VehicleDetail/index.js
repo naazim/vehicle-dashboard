@@ -1,4 +1,5 @@
 import React from 'react';
+import { Juice } from '../Juice';
 
 const VehicleDetail = ({ vehicleData }) => {
   const {
@@ -28,12 +29,13 @@ const VehicleDetail = ({ vehicleData }) => {
       <div>make: {make}</div>
       <div>model: {model}</div>
       <div>mileage: {mileage}</div>
-      <div>fuellevel: {fuellevel}</div>
       <div>batteryChangeLevel: {batteryChangeLevel}</div>
       <div>vehicleLockStatus: {vehicleLockStatus}</div>
       <div>vehicleInteriorTemperature: {vehicleInteriorTemperature}</div>
       <div>batteryChargingStatus: {batteryChargingStatus}</div>
       <div>fleetId: {fleetId}</div>
+      <div>fuellevel: {fuellevel}</div>
+      {true && <Juice value={fuellevel} />}
     </div>
   );
 };
