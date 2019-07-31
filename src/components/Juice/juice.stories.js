@@ -13,7 +13,7 @@ storiesOf('Juice', module)
       step: 1
     };
 
-    const value = number('percentage', 25, values, 'GROUP-ID1');
+    const value = number('percentage', 25, values);
 
-    return <Juice value={value} isCharging={boolean('charging', false)} />;
+    return <Juice value={value} isCharging={boolean('charging', true)} />;
   });
