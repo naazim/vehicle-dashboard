@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Usericon from '../../assets/user.svg';
 
 class User extends Component {
   state = {
@@ -16,7 +18,13 @@ class User extends Component {
 
     return (
       <div className="fleet-user">
-        <span>Hi {user.firstName}!</span>
+        <div className="fleet-user__content">
+          <span className="fleet-user__name">{user.firstName}</span>
+          <Link to="/login" className="fleet-user__signout">
+            Logout
+          </Link>
+        </div>
+        <img className="fleet-user__pic" src={Usericon} alt="profile pic" />
       </div>
     );
   }

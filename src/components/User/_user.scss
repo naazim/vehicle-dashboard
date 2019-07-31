@@ -1,3 +1,24 @@
-.fleet-user {
+$profile-pic-size: 36px;
 
+.fleet-user {
+  display: flex;
+}
+
+.fleet-user__pic {
+  width: $profile-pic-size;
+}
+
+.fleet-user__name {
+  font-weight: bold;
+}
+
+.fleet-user__signout {
+  color: $white;
+  text-decoration: underline;
+}
+.fleet-user__content {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-right: $spacing-s;
 }

@@ -3,12 +3,6 @@
   background-color: $secondary-color;
   color: $white;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
   padding: $spacing-s $spacing-m;
-}
-
-.fleet-header__signout {
-  color: $white;
-  text-decoration: underline;
 }

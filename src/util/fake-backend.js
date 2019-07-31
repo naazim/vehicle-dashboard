@@ -2,10 +2,10 @@ export function configureFakeBackend() {
   let users = [
     {
       id: 1,
-      username: "test",
-      password: "test",
-      firstName: "Test",
-      lastName: "User"
+      username: 'test',
+      password: 'test',
+      firstName: 'John',
+      lastName: 'Smith'
     }
   ];
   let realFetch = window.fetch;
@@ -14,7 +14,7 @@ export function configureFakeBackend() {
       // wrap in timeout to simulate server api call
       setTimeout(() => {
         // authenticate
-        if (url.endsWith("/users/authenticate") && opts.method === "POST") {
+        if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
           // get parameters from post request
           let params = JSON.parse(opts.body);
 
@@ -41,19 +41,19 @@ export function configureFakeBackend() {
             });
           } else {
             // else return error
-            reject("Username or password is incorrect");
+            reject('Username or password is incorrect');
           }
 
           return;
         }
 
         // get users
-        if (url.endsWith("/users") && opts.method === "GET") {
+        if (url.endsWith('/users') && opts.method === 'GET') {
           // check for fake auth token in header and return users if valid, this security
           // is implemented server side in a real application
           if (
             opts.headers &&
-            opts.headers.Authorization === `Basic ${window.btoa("test:test")}`
+            opts.headers.Authorization === `Basic ${window.btoa('test:test')}`
           ) {
             resolve({
               ok: true,

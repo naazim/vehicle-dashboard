@@ -35,7 +35,9 @@ const VehicleDetail = ({ vehicleData }) => {
       <div>batteryChargingStatus: {batteryChargingStatus}</div>
       <div>fleetId: {fleetId}</div>
       <div>fuellevel: {fuellevel}</div>
-      {true && <Juice value={fuellevel} />}
+      {true && (
+        <Juice value={batteryChangeLevel} isCharging={batteryChargingStatus} />
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import { authHeader } from "../util/auth-header";
+import { authHeader } from '../util/auth-header';
 
 const config = {
-  apiUrl: "http://localhost:3000"
+  apiUrl: 'http://localhost:3000'
 };
 
 export const userService = {
@@ -12,8 +12,8 @@ export const userService = {
 
 function login(username, password) {
   const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
   };
 
@@ -24,8 +24,8 @@ function login(username, password) {
       if (user) {
         // store user details and basic auth credentials in local storage
         // to keep user logged in between page refreshes
-        user.authdata = window.btoa(username + ":" + password);
-        localStorage.setItem("user", JSON.stringify(user));
+        user.authdata = window.btoa(username + ':' + password);
+        localStorage.setItem('user', JSON.stringify(user));
       }
 
       return user;
@@ -34,12 +34,12 @@ function login(username, password) {
 
 function logout() {
   // remove user from local storage to log user out
-  localStorage.removeItem("user");
+  localStorage.removeItem('user');
 }
 
 function getAll() {
   const requestOptions = {
-    method: "GET",
+    method: 'GET',
     headers: authHeader()
   };
 
