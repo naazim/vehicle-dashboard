@@ -1,5 +1,6 @@
 import React from 'react';
 import { Juice } from '../Juice';
+import BeetleImg from '../../assets/vehicles/beetle.png';
 
 const VehicleDetail = ({ vehicleData }) => {
   const {
@@ -38,6 +39,7 @@ const VehicleDetail = ({ vehicleData }) => {
       {true && (
         <Juice value={batteryChangeLevel} isCharging={batteryChargingStatus} />
       )}
+      <img src={BeetleImg} alt="Beetle" />
     </div>
   );
 };
