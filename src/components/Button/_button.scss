@@ -30,6 +30,13 @@ button:not(:disabled) {
   border-color: $primary-color;
 }
 
+.btn-icon {
+  color: #fff;
+  background-color: inherit;
+  border-color: transparent;
+  min-width: 0;
+}
+
 .btn-light {
   color: $primary-color;
   background-color: $white;

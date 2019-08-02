@@ -1,6 +1,23 @@
 .fl-nav {
   display: flex;
+  flex-direction: column;
   background-color: $secondary-color;
+}
+
+.fl-nav__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+}
+
+.fl-nav__logo {
+  height: $logo-height;
+  margin-left: $spacing-m;
+}
+
+.fl-hamburger {
+
 }
 
 .fl-vehicles {
