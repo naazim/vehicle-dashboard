@@ -17,14 +17,14 @@ class User extends Component {
     const { user } = this.state;
 
     return (
-      <div className="fleet-user">
-        <div className="fleet-user__content">
-          <span className="fleet-user__name">{user.firstName}</span>
-          <Link to="/login" className="fleet-user__signout">
+      <div className="fl-user">
+        <div className="fl-user__content">
+          <span className="fl-user__name">{user.firstName}</span>
+          <Link to="/login" className="fl-user__signout">
             Logout
           </Link>
         </div>
-        <img className="fleet-user__pic" src={Usericon} alt="profile pic" />
+        <img className="fl-user__pic" src={Usericon} alt="profile pic" />
       </div>
     );
   }

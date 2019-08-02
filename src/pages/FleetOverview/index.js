@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-const API_URL = "/fleet/1/vehicle";
+const API_URL = '/fleet/1/vehicle';
 
 class FleetOverview extends Component {
   state = {
@@ -20,7 +20,7 @@ class FleetOverview extends Component {
     const { vehicles } = this.state;
 
     return (
-      <div className="fleet-overview">
+      <div className="fl-overview">
         {vehicles.map(vehicle => (
           <button key={vehicle.vehicleId}>{vehicle.vehicleId}</button>
         ))}

@@ -10,7 +10,7 @@ const Nav = () => {
       <Link to="/dashboard">
         <button>Dashboard</button>
       </Link>
-      <Link to="/fleet-overview">
+      <Link to="/fl-overview">
         <button>Fleet Overview</button>
       </Link>
       <Link to="/vehicle-detail">

@@ -1,22 +1,22 @@
 $profile-pic-size: 36px;
 
-.fleet-user {
+.fl-user {
   display: flex;
 }
 
-.fleet-user__pic {
+.fl-user__pic {
   width: $profile-pic-size;
 }
 
-.fleet-user__name {
+.fl-user__name {
   font-weight: bold;
 }
 
-.fleet-user__signout {
+.fl-user__signout {
   color: $white;
   text-decoration: underline;
 }
-.fleet-user__content {
+.fl-user__content {
   display: flex;
   flex-direction: column;
   text-align: right;

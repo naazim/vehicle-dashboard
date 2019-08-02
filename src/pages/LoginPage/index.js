@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Login } from '../../components/Login';
+import { Intro } from '../../components/Intro';
 import { userService } from '../../services/user.service';
 
 class LoginPage extends Component {
@@ -50,15 +51,18 @@ class LoginPage extends Component {
     const { username, password, submitted, loading, error } = this.state;
 
     return (
-      <Login
-        username={username}
-        password={password}
-        submitted={submitted}
-        loading={loading}
-        error={error}
-        handleSubmit={this.handleSubmit}
-        handleChange={this.handleChange}
-      />
+      <div className="fl-login-wrapper">
+        <Intro />
+        <Login
+          username={username}
+          password={password}
+          submitted={submitted}
+          loading={loading}
+          error={error}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+        />
+      </div>
     );
   }
 }

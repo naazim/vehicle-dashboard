@@ -34,7 +34,7 @@ export default App;
 /*<div>*/
 /*<Route exact path="/" component={Login} />*/
 /*<Route exact path="/dashboard" component={Dashboard} />*/
-/*<Route exact path="/fleet-overview" component={FleetOverview} />*/
+/*<Route exact path="/fl-overview" component={FleetOverview} />*/
 /*<Route exact path="/vehicle-detail" component={VehicleDetail} />*/
 /*</div>*/
 /*</div>*/

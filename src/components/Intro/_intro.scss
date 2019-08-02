@@ -1,0 +1,53 @@
+$logo-height: 28px;
+
+.fl-intro  {
+  color: $white;
+  width: 65%;
+  background: url('../assets/login-bg.jpg') no-repeat center;
+  background-size: cover;
+  padding: 0 160px;
+}
+
+.fl-intro__header {
+  text-align: center;
+  margin-top: $spacing-m;
+  overflow: hidden;
+}
+.fl-intro__lines {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    border-top: 2px solid $white;
+    top: $logo-height / 2 - 1;
+    width: 600px;
+  }
+
+  &::before {
+    right: 100%;
+    margin-right: 15px;
+  }
+
+  &::after {
+    left: 100%;
+    margin-left: 15px;
+  }
+}
+
+.fl-intro__logo {
+  height: $logo-height;
+}
+
+.fl-intro__title {
+  font-size: 4rem;
+  margin-top: 120px;
+}
+
+.fl-intro__content {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-top: 120px;
+}

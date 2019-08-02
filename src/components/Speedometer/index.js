@@ -1,18 +1,18 @@
-import React from "react";
-import {CircularProgress} from "./circular-progress";
+import React from 'react';
+import { CircularProgress } from './circular-progress';
 
 const settings = {
   width: 500,
   innerRadius: 244,
   outerRadius: 250,
-  fill: "#41ACFE"
+  fill: '#41ACFE'
 };
 
 class Speedometer extends React.Component {
   static progressBar;
-  
+
   componentDidMount() {
-    const charts = document.getElementById("chart");
+    const charts = document.getElementById('chart');
     this.progressBar = new CircularProgress(charts, settings);
     this.progressBar.update([this.props.value]);
   }
@@ -24,7 +24,7 @@ class Speedometer extends React.Component {
   }
 
   render() {
-    return <div id="chart" className="fleet-speedometer" />;
+    return <div id="chart" className="fl-speedometer" />;
   }
 }
 

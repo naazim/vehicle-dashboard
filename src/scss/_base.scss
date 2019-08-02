@@ -7,11 +7,13 @@ html, body, #root {
 
 body {
   margin: 0;
-  font-family: 'VW', "Segoe UI", "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
+  font-family: 'VW', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+strong {
+  font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 code {

@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'fonts';
+@import 'text';
 @import 'base';
 @import 'mixins';
 @import 'animations';
@@ -12,6 +13,7 @@
 @import '../components/Button/button';
 @import '../components/Juice/juice';
 @import '../components/Login/login';
+@import '../components/Intro/intro';
 @import '../components/User/user';
 @import '../components/Fleets/fleets';
 @import '../components/Vehicle/vehicle';

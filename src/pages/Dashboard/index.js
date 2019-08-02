@@ -46,7 +46,7 @@ class Dashboard extends Component {
   render() {
     const { fleets, fleetVehicles, vehicle: vehicleData } = this.state;
     return (
-      <div className="fleet-dashboard">
+      <div className="fl-dashboard">
         <Fleets
           data={fleets}
           fleetVehicles={fleetVehicles}

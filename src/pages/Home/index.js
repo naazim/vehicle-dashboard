@@ -5,7 +5,7 @@ import { Header } from '../../components/Header';
 class Home extends Component {
   render() {
     return (
-      <main className="fleet-main">
+      <main className="fl-main">
         <Header />
         <Dashboard />
       </main>

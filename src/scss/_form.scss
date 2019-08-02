@@ -14,23 +14,29 @@
 .form__control {
   display: block;
   width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem .75rem;
+  height: calc(1.5em + 1.5rem + 2px);
+  padding: 1.5rem 1rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
+  background: $white!important;
   border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  -webkit-box-shadow: 0 0 0 100px white inset; //To prevent blue default bg in chrome
 
   &:focus {
     color: #495057;
-    background-color: #fff;
-    border-color: #80bdff;
+    background-color: $white;
+    border-color: $primary-color;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    box-shadow: 0 0 4px 0 rgba(85, 177, 242, 0.4);
   }
+}
+
+.form__btn-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-end;
 }
