@@ -35,8 +35,17 @@
   }
 }
 
+.form__alert {
+  color:$error-color;
+  font-size: 0.9rem;
+}
+
 .form__btn-wrapper {
   margin-top: 3rem;
   display: flex;
   justify-content: flex-end;
+}
+
+.form__btn-preloader {
+  margin-left: $spacing-s;
 }

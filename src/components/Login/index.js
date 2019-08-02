@@ -1,4 +1,5 @@
 import React from 'react';
+import { Preloader } from '../Preloader';
 
 class Login extends React.Component {
   render() {
@@ -13,57 +14,56 @@ class Login extends React.Component {
     } = this.props;
     return (
       <div className="fl-login">
-        <h1 className="fl-login__title header-light">Login</h1>
-        <form name="form" onSubmit={handleSubmit}>
-          <div
-            className={
-              'form__group' + (submitted && !username ? ' has-error' : '')
-            }
-          >
-            {/*<label htmlFor="username">Username</label>*/}
-            <input
-              type="text"
-              className="form__control"
-              name="username"
-              value={username}
-              onChange={handleChange}
-              placeholder="Username"
-            />
-            {submitted && !username && (
-              <div className="help-block">Username is required</div>
-            )}
-          </div>
-          <div
-            className={
-              'form__group' + (submitted && !password ? ' has-error' : '')
-            }
-          >
-            {/*<label htmlFor="password">Password</label>*/}
-            <input
-              type="password"
-              className="form__control"
-              name="password"
-              value={password}
-              onChange={handleChange}
-              placeholder="Password"
-            />
-            {submitted && !password && (
-              <div className="help-block">Password is required</div>
-            )}
-          </div>
-          <div className="form__group form__btn-wrapper">
-            <button className="btn btn-primary" disabled={loading}>
-              Login
-              {loading && (
-                <img
-                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
-                  alt="img"
-                />
+        <div className="fl-login__content">
+          <h1 className="fl-login__title header-light">Login</h1>
+          <form name="form" onSubmit={handleSubmit}>
+            <div
+              className={
+                'form__group' + (submitted && !username ? ' has-error' : '')
+              }
+            >
+              {/*<label htmlFor="username">Username</label>*/}
+              <input
+                type="text"
+                className="form__control"
+                name="username"
+                value={username}
+                onChange={handleChange}
+                placeholder="Username"
+              />
+              {submitted && !username && (
+                <div className="form__alert">Username is required</div>
               )}
-            </button>
-          </div>
-          {error && <div className={'alert alert-danger'}>{error}</div>}
-        </form>
+            </div>
+            <div
+              className={
+                'form__group' + (submitted && !password ? ' has-error' : '')
+              }
+            >
+              {/*<label htmlFor="password">Password</label>*/}
+              <input
+                type="password"
+                className="form__control"
+                name="password"
+                value={password}
+                onChange={handleChange}
+                placeholder="Password"
+              />
+              {submitted && !password && (
+                <div className="form__alert">Password is required</div>
+              )}
+            </div>
+
+            {error && <div className="form__alert">{error}</div>}
+
+            <div className="form__group form__btn-wrapper">
+              <button className="btn btn-primary" disabled={loading}>
+                Login
+                {loading && <Preloader className="form__btn-preloader" />}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

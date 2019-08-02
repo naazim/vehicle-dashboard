@@ -1,5 +1,5 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
 const Button = props => {
   const { type, className, disabled, onClick } = props;
@@ -7,7 +7,7 @@ const Button = props => {
   return (
     <button
       type={type}
-      className={clsx("btn", className)}
+      className={clsx('btn', className)}
       disabled={disabled}
       onClick={onClick}
     >
@@ -19,7 +19,7 @@ const Button = props => {
 Button.propTypes = {};
 
 Button.defaultProps = {
-  type: "button"
+  type: 'button'
 };
 
-export default Button;
+export { Button };

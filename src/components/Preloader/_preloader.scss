@@ -1,0 +1,12 @@
+$preloader-size: 30px;
+$ring-width: 3px;
+
+.fl-preloader {
+  display: inline-block;
+  border: $ring-width solid $primary-color;
+  border-top: $ring-width solid $white;
+  border-radius: 50%;
+  width: $preloader-size;
+  height: $preloader-size;
+  animation: spin 1s linear infinite;
+}

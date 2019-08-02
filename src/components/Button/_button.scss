@@ -1,16 +1,19 @@
 .btn {
   font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: bold;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #212529;
   text-align: center;
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 1rem 1.6rem;
+  padding: 0 1.6rem;
   font-size: 1.25rem;
   border-radius: 3rem;
   min-width: 9rem;
+  height: $btn-height;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 

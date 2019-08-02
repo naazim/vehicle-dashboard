@@ -1,7 +1,15 @@
 .fl-login {
-  width: 500px;
-  margin: 0 auto;
   overflow: hidden;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-self: center;
+}
+
+.fl-login__content {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 .fl-login__title {
