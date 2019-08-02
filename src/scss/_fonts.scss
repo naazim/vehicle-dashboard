@@ -1,1 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:500&display=swap');
+@font-face {
+  font-family: "VW light";
+  src: url("./fonts/VWHeadWeb-Light.woff2") format("woff2"),
+  url("./fonts/VWHeadWeb-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "VW bold";
+  src: url("./fonts/VWTextWeb-Regular.woff2") format("woff2"),
+  url("./fonts/VWTextWeb-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "VW";
+  src: url("./fonts/VWTextWeb-Regular.woff2") format("woff2"),
+  url("./fonts/VWTextWeb-Regular.woff") format("woff");
+}

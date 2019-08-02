@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Login } from '../../components/Login';
 import { userService } from '../../services/user.service';
 
-class LoginPage extends React.Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props);
 
