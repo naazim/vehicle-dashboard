@@ -14,17 +14,14 @@ class LoginPage extends React.Component {
       loading: false,
       error: ''
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
+  };
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
 
     this.setState({ submitted: true });
@@ -45,7 +42,7 @@ class LoginPage extends React.Component {
       },
       error => this.setState({ error, loading: false })
     );
-  }
+  };
 
   render() {
     const { username, password, submitted, loading, error } = this.state;
