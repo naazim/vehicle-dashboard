@@ -1,33 +1,41 @@
 .fleets {
-  width: 300px;
+  width: $side-panel-width;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border-top: 1px solid $light-color;
+
 }
 
-.fleets__btn {
-  padding: 1.5rem 1rem;
-  border-radius: 0;
-  border-width: 2px;
-  position: relative;
-  margin-bottom: -2px;
-  text-align: left;
+.fleet__item {
+  border-bottom: 1px solid $light-color;
+}
+
+.fleet__btn {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
+  padding: 0 $spacing-m;
+  height: 104px;
+  border: none;
+  text-align: left;
+  color: $white;
+  background-color: $secondary-color;
+
 
   &:hover, &focus {
     background-color: $secondary-color;
-    color: $white;
     border-color: $secondary-color;
     z-index: 1;
 
-    .fleets__label {
+    .fleet__label {
       background-color: $white;
       color: $secondary-color;
     }
   }
 }
 
-.fleets__label {
+.fleet__label {
   background-color: $primary-color;
   color: $white;
   width: 50px;
@@ -39,4 +47,8 @@
   font-size: 1rem;
   font-weight: bold;
   transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}
+
+.fleet__name {
+  flex: 1 0 0;
 }

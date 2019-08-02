@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Usericon from '../../assets/user.svg';
+import Usericon from '../../assets/user.png';
 
 class User extends Component {
   state = {

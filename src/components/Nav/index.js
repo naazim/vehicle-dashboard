@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Fleets } from '../../components/Fleets';
-import { VehicleDetail } from '../../components/VehicleDetail';
 import { Button } from '../../components/Button';
 import FleetLogo from '../../assets/fleet-logo.svg';
 
@@ -40,13 +39,14 @@ class Nav extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({ vehicle: data });
+        this.props.onVehicleClick(data);
         console.log(data);
       })
       .catch(console.log);
   };
 
   render() {
-    const { fleets, fleetVehicles, vehicle: vehicleData } = this.state;
+    const { fleets, fleetVehicles } = this.state;
     return (
       <nav className="fl-nav">
         <div className="fl-nav__header">
@@ -61,7 +61,6 @@ class Nav extends Component {
           onFleetClick={this.onFleetClick}
           onVehicleClick={this.onVehicleClick}
         />
-        {vehicleData && <VehicleDetail vehicleData={vehicleData} />}
       </nav>
     );
   }

@@ -1,4 +1,10 @@
-.fl-main {
+.fl-container {
   height: 100%;
   display: flex;
+}
+
+.fl-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
 }

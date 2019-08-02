@@ -10,20 +10,17 @@ const Fleets = ({
 }) => (
   <div className="fleets">
     {fleets.map(fleet => (
-      <div className="fleets__item" key={fleet.id}>
-        <button
-          className="btn-light fleets__btn"
-          onClick={() => onFleetClick(fleet.id)}
-        >
-          {fleet.fleetName}
-          <label
+      <div className="fleet__item" key={fleet.id}>
+        <button className="fleet__btn" onClick={() => onFleetClick(fleet.id)}>
+          <span
             className={clsx(
-              'fleets__label',
-              fleet.fleetStatus === 'Active' && 'fleets__label--active'
+              'fleet__label',
+              fleet.fleetStatus === 'Active' && 'fleet__label--active'
             )}
           >
             {fleet.noOfVehicles}
-          </label>
+          </span>
+          <span className="fleet__name">{fleet.fleetName}</span>
         </button>
 
         {fleetVehicles.length > 0 &&

@@ -1,4 +1,4 @@
-$profile-pic-size: 36px;
+$profile-pic-size: 58px;
 
 .fl-user {
   display: flex;
@@ -6,6 +6,8 @@ $profile-pic-size: 36px;
 
 .fl-user__pic {
   width: $profile-pic-size;
+  height: $profile-pic-size;
+  border-radius: 100%;
 }
 
 .fl-user__name {
@@ -13,12 +15,12 @@ $profile-pic-size: 36px;
 }
 
 .fl-user__signout {
-  color: $white;
-  text-decoration: underline;
+  color: $secondary-color;
 }
 .fl-user__content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: right;
   margin-right: $spacing-s;
 }
