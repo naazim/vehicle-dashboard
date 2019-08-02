@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Dashboard } from '../Dashboard';
 import { Header } from '../../components/Header';
+import { Nav } from '../../components/Nav';
 
 class Home extends Component {
   render() {
     return (
       <main className="fl-main">
+        <Nav />
         <Header />
-        <Dashboard />
       </main>
     );
   }

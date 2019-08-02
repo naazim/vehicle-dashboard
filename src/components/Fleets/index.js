@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Button } from '../Button';
 import { Vehicle } from '../Vehicle';
 
 const Fleets = ({
@@ -12,7 +11,7 @@ const Fleets = ({
   <div className="fleets">
     {fleets.map(fleet => (
       <div className="fleets__item" key={fleet.id}>
-        <Button
+        <button
           className="btn-light fleets__btn"
           onClick={() => onFleetClick(fleet.id)}
         >
@@ -25,7 +24,7 @@ const Fleets = ({
           >
             {fleet.noOfVehicles}
           </label>
-        </Button>
+        </button>
 
         {fleetVehicles.length > 0 &&
           fleetVehicles

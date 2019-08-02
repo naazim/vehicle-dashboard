@@ -12,6 +12,7 @@
 @import '../components/Header/header';
 @import '../components/Button/button';
 @import '../components/Juice/juice';
+@import '../components/Nav/nav';
 @import '../components/Login/login';
 @import '../components/Intro/intro';
 @import '../components/User/user';
@@ -23,8 +24,6 @@
 /* Pages */
 @import '../pages/app';
 @import '../pages/Home/home';
-@import '../pages/Auth/auth';
 @import '../pages/LoginPage/login-page';
-@import '../pages/Dashboard/dashboard';
 @import '../pages/FleetOverview/fleetOverview';
 @import '../pages/VehicleDetail/vehicleDetails';
