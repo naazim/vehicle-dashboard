@@ -1,6 +1,6 @@
 import React from 'react';
 import { Juice } from '../Juice';
-import BeetleImg from '../../assets/vehicles/beetle.png';
+import BeetleImg from '../../assets/vehicles/2019-beetle-wolfsburg.png';
 
 const VehicleDetail = ({ vehicleData }) => {
   const {

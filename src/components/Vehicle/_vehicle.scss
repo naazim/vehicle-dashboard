@@ -1,9 +1,27 @@
-.fleet__vehicle {
-  border: 2px solid $primary-color;
+$fleet-vehicle-height: 60px;
+
+.fl-vehicle__btn {
+  background-color: $intense-color;
+  color: $white;
+  border: none;
+  border-top: 1px solid $intense-active-color;
+  height: $fleet-vehicle-height;
+  padding: 0 $spacing-m;
   text-align: left;
   line-height: 1.4;
-  padding: 1rem;
-  margin-bottom: -2px;
   animation: fade-in .5s;
   width: 100%;
+
+  &:hover, &:focus {
+    background-color: $intense-active-color;
+  }
+}
+
+.fl-vehicle__name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.fl-vehicle__status {
+  font-weight: lighter;
 }

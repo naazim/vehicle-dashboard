@@ -1,10 +1,12 @@
+$fleet-btn-height: 96px;
+
+
 .fleets {
   width: $side-panel-width;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
   border-top: 1px solid $light-color;
-
 }
 
 .fleet__item {
@@ -16,7 +18,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 $spacing-m;
-  height: 104px;
+  height: $fleet-btn-height;
   border: none;
   text-align: left;
   color: $white;
@@ -24,31 +26,24 @@
 
 
   &:hover, &focus {
-    background-color: $secondary-color;
-    border-color: $secondary-color;
-    z-index: 1;
-
-    .fleet__label {
-      background-color: $white;
-      color: $secondary-color;
-    }
+    background-color: $intense-color;
   }
 }
 
 .fleet__label {
-  background-color: $primary-color;
-  color: $white;
-  width: 50px;
+  background-color: $white;
+  color: $secondary-color;
+  width: 40px;
   padding: 2px 10px;
+  margin-right: $spacing-m;
   border-radius: 20px;
   display: inline-block;
-  float: right;
   text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: .8rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out;
 }
 
 .fleet__name {
   flex: 1 0 0;
+  font-size: 1rem;
 }
