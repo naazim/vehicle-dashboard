@@ -4,3 +4,20 @@
   padding: $spacing-l;
   animation: fade-in .5s;
 }
+
+.vehicle-detail__picture {
+  text-align: center;
+}
+
+.vehicle-detail__brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20rem;
+  margin-bottom: -4rem;
+  color: $light-white;
+  line-height: 0.8;
+}
+
+.vehicle-detail__image {
+  width: auto;
+  max-width: 80%;
+}

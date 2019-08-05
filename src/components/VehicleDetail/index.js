@@ -39,7 +39,10 @@ const VehicleDetail = ({ vehicleData }) => {
       {true && (
         <Juice value={batteryChangeLevel} isCharging={batteryChargingStatus} />
       )}
-      <img src={BeetleImg} alt="Beetle" />
+      <div className="vehicle-detail__picture">
+        <div className="vehicle-detail__brand">{name}</div>
+        <img className="vehicle-detail__image" src={BeetleImg} alt="Beetle" />
+      </div>
     </div>
   );
 };
