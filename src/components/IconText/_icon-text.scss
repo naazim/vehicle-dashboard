@@ -5,6 +5,7 @@
 
   &:nth-child(even) {
     flex-direction: row-reverse;
+    text-align: right;
 
     .fl-icon-text__img {
       margin-left: $spacing-m;

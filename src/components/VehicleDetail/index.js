@@ -55,7 +55,6 @@ const VehicleDetail = ({ vehicleData }) => {
       </div>
       <div>vehicleId: {vehicleId}</div>
       <div>vehicleStatus: {vehicleStatus}</div>
-      <div>name: {name}</div>
       <div>vin: {vin}</div>
       <div>make: {make}</div>
       <div>model: {model}</div>
