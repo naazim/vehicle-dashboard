@@ -22,6 +22,7 @@ const VehicleDetail = ({ vehicleData }) => {
 
   return (
     <div className="vehicle-detail">
+      <h1 className="vehicle-detail__name">{name}</h1>
       <div>vehicleId: {vehicleId}</div>
       <div>vehicleStatus: {vehicleStatus}</div>
       <div>name: {name}</div>

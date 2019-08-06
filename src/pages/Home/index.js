@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
+import clsx from 'clsx';
 import { Header } from '../../components/Header';
 import { Nav } from '../../components/Nav';
 import { VehicleDetail } from '../../components/VehicleDetail';
 
 class Home extends Component {
   state = {
-    vehicleData: null
+    vehicleData: null,
+    theme: 'light'
   };
 
   onVehicleClick = data => {
     this.setState(() => ({
       vehicleData: data
     }));
-    console.log('hello', data);
+  };
+
+  toggleTheme = () => {
+    this.setState(() => ({
+      theme: this.state.theme === 'dark' ? 'light' : 'dark'
+    }));
   };
 
   render() {
-    const { vehicleData } = this.state;
+    const { vehicleData, theme } = this.state;
 
     return (
-      <div className="fl-container">
+      <div className={clsx('fl-container', `theme-${theme}`)}>
         <Nav onVehicleClick={this.onVehicleClick} />
         <div className="fl-content">
-          <Header />
+          <Header toggleTheme={this.toggleTheme} currentTheme={theme} />
           {vehicleData && <VehicleDetail vehicleData={vehicleData} />}
         </div>
       </div>

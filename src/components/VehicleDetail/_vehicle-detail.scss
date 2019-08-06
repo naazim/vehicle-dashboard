@@ -5,6 +5,13 @@
   animation: fade-in .5s;
 }
 
+.vehicle-detail__name {
+  color: $secondary-color;
+  font-size: 4rem;
+  font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0 0 $spacing-m;
+}
+
 .vehicle-detail__picture {
   text-align: center;
 }

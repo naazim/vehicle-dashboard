@@ -7,10 +7,11 @@
 @import 'form';
 
 /* Components */
+@import '../components/Button/button';
 @import '../components/Speedometer/speedometer';
+@import '../components/ThemeSwitcher/theme-switcher';
 @import '../components/Map/map';
 @import '../components/Header/header';
-@import '../components/Button/button';
 @import '../components/Juice/juice';
 @import '../components/Nav/nav';
 @import '../components/Login/login';

@@ -1,0 +1,28 @@
+.fl-theme-switcher {
+  color: $secondary-color;
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+  padding: $spacing-m 0;
+  font-size: 1rem;
+  will-change: color;
+  transition: color $transition-time ease-in-out;
+
+  &.fl-theme-switcher--light {
+    color: $primary-color;
+  }
+}
+
+.fl-theme-switcher__icon {
+  margin-right: $spacing-s;
+
+  path {
+    fill: $secondary-color;
+    will-change: fill;
+    transition: fill $transition-time ease-in-out;
+
+    .fl-theme-switcher--light & {
+      fill: $primary-color;
+    }
+  }
+}
