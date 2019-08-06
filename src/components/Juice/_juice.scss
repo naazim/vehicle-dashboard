@@ -44,11 +44,11 @@ $secondary-color-light: #4cc7f4;
 .fl-juice__charging {
   position: absolute;
   top: 0;
-  left: -20px;
+  left: -25px;
   bottom: 0;
   right: 0;
   margin: auto;
-  transform: scale(0.2);
+  transform: scale(0.15);
   filter: drop-shadow(0 0 4px $white);
   animation: blinker 1s linear infinite;
 }
