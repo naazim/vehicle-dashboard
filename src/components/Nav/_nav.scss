@@ -2,6 +2,25 @@
   display: flex;
   flex-direction: column;
   background-color: $secondary-color;
+  will-change: width;
+  width: $nav-panel-width;
+  transition: margin-left $transition-time ease-in-out;
+}
+
+.fl-nav--open {
+  + .fl-content .fl-theme-switcher {
+    transition:  transform $transition-time ease-in-out;
+    transform: translateX(0);
+  }
+}
+
+.fl-nav--closed {
+  margin-left: -$nav-panel-width;
+
+  + .fl-content .fl-theme-switcher {
+    transition:  transform $transition-time ease-in-out;
+    transform: translateX($spacing-l);
+  }
 }
 
 .fl-nav__header {
@@ -9,22 +28,32 @@
   justify-content: space-between;
   align-items: center;
   height: $header-height;
-  padding: 0 $spacing-m;
 }
 
 .fl-nav__logo {
   width: $logo-width;
   height: $logo-height;
+  margin-left: $spacing-m;
 }
 
 .fl-hamburger {
-  background: url('../assets/burger.svg') no-repeat center;
-  width: 24px;
-  height: 24px;
-  background-size: 24px;
-  filter: brightness(0) invert(1);
-  padding: $spacing-m;
-  margin-right: -$spacing-m / 2;
+  transition: transform $transition-time ease-in-out, filter $transition-time ease-in-out ;
+  width: 78px;
+  height: 78px;
+
+  .fl-nav--closed & {
+    transform: translateX(76px);
+  }
+}
+
+.fl-hamburger__icon {
+  path {
+    fill: $white;
+
+    .fl-nav--closed & {
+      fill: $secondary-color;
+    }
+  }
 }
 
 .fl-vehicles {

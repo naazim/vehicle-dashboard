@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Fleets } from '../../components/Fleets';
 import FleetLogo from '../../assets/fleet-logo.svg';
+import { ReactComponent as Hamburger } from '../../assets/burger.svg';
+import clsx from 'clsx';
 
 const API_FLEETS_URL = '/fleet';
 
@@ -8,7 +10,8 @@ class Nav extends Component {
   state = {
     fleets: [],
     fleetVehicles: [],
-    vehicle: null
+    vehicle: null,
+    isNavOpen: true
   };
 
   componentDidMount() {
@@ -44,13 +47,30 @@ class Nav extends Component {
       .catch(console.log);
   };
 
+  toggleNav = () => {
+    this.setState(() => ({
+      isNavOpen: !this.state.isNavOpen
+    }));
+  };
+
   render() {
-    const { fleets, fleetVehicles } = this.state;
+    const { fleets, fleetVehicles, isNavOpen } = this.state;
     return (
-      <nav className="fl-nav">
+      <nav
+        className={clsx(
+          'fl-nav',
+          isNavOpen ? 'fl-nav--open' : 'fl-nav--closed'
+        )}
+      >
         <div className="fl-nav__header">
           <img className="fl-nav__logo" src={FleetLogo} alt="Fleet logo" />
-          <button type="button" className="fl-hamburger btn-icon" />
+          <button
+            type="button"
+            className="fl-hamburger btn-icon"
+            onClick={this.toggleNav}
+          >
+            <Hamburger class="fl-hamburger__icon" />
+          </button>
         </div>
         <Fleets
           data={fleets}
