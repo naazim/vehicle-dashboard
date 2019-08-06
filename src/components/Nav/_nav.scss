@@ -9,16 +9,22 @@
   justify-content: space-between;
   align-items: center;
   height: $header-height;
+  padding: 0 $spacing-m;
 }
 
 .fl-nav__logo {
   width: $logo-width;
   height: $logo-height;
-  margin-left: $spacing-m;
 }
 
 .fl-hamburger {
-
+  background: url('../assets/burger.svg') no-repeat center;
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+  filter: brightness(0) invert(1);
+  padding: $spacing-m;
+  margin-right: -$spacing-m / 2;
 }
 
 .fl-vehicles {

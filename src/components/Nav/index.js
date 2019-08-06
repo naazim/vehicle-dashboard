@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Fleets } from '../../components/Fleets';
-import { Button } from '../../components/Button';
 import FleetLogo from '../../assets/fleet-logo.svg';
 
 const API_FLEETS_URL = '/fleet';
@@ -51,9 +50,7 @@ class Nav extends Component {
       <nav className="fl-nav">
         <div className="fl-nav__header">
           <img className="fl-nav__logo" src={FleetLogo} alt="Fleet logo" />
-          <Button type="button" className="fl-hamburger btn-icon">
-            ☰
-          </Button>
+          <button type="button" className="fl-hamburger btn-icon" />
         </div>
         <Fleets
           data={fleets}
