@@ -1,0 +1,46 @@
+.fl-icon-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.2rem;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .fl-icon-text__img {
+      margin-left: $spacing-m;
+      margin-right: 0;
+      text-align: right;
+    }
+  }
+}
+
+.fl-icon-text__label {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 1em;
+}
+
+.fl-icon-text__value {
+  font-family: 'VW light', -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: capitalize;
+}
+
+.fl-icon-text__img {
+  margin-right: $spacing-m;
+  width: 94px;
+
+  svg:not(.custom) {
+    path {
+      fill: $primary-color;
+    }
+  }
+
+  .custom  {
+    .stroke {
+      stroke: $primary-color;
+    }
+    .fill {
+      fill: $primary-color;
+    }
+  }
+}

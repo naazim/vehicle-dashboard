@@ -1,7 +1,7 @@
 .fl-nav {
   display: flex;
   flex-direction: column;
-  background-color: $secondary-color;
+  background-color: $primary-color;
   will-change: width;
   width: $nav-panel-width;
   transition: margin-left $transition-time ease-in-out;
@@ -9,7 +9,7 @@
 
 .fl-nav--open {
   + .fl-content .fl-theme-switcher {
-    transition:  transform $transition-time ease-in-out;
+    transition: transform $transition-time ease-in-out, color $transition-time ease-in-out;
     transform: translateX(0);
   }
 }
@@ -18,7 +18,7 @@
   margin-left: -$nav-panel-width;
 
   + .fl-content .fl-theme-switcher {
-    transition:  transform $transition-time ease-in-out;
+    transition: transform $transition-time ease-in-out, color $transition-time ease-in-out;
     transform: translateX($spacing-l);
   }
 }
@@ -51,7 +51,7 @@
     fill: $white;
 
     .fl-nav--closed & {
-      fill: $secondary-color;
+      fill: $primary-color;
     }
   }
 }

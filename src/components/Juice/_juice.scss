@@ -1,9 +1,10 @@
-$juice-block: 6px;
-$primary-color-light: #4cc7f4;
+$juice-block: 4px;
+$secondary-color-light: #4cc7f4;
 
 .fl-juice {
-  width: 58px;
-  height: 90px;
+  width: 56px;
+  height: 80px;
+  border-radius: 10px;
   border: $juice-block solid $primary-color;
   margin-top: $juice-block;
   padding: $juice-block;
@@ -26,7 +27,8 @@ $primary-color-light: #4cc7f4;
 }
 
 .fl-juice__meter {
-  background-image: linear-gradient(270deg, $primary-color 0%, $primary-color 50%, $primary-color-light 50%, $primary-color-light 100%);
+  background-color: $primary-color;
+  border-radius: 4px;
   height: 0;
   width: 100%;
   transition: height 1s ease-in-out;
@@ -39,11 +41,11 @@ $primary-color-light: #4cc7f4;
 .fl-juice__charging {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -20px;
   bottom: 0;
   right: 0;
   margin: auto;
-  width: 16px;
+  transform: scale(0.2);
   filter: drop-shadow(0 0 4px $white);
   animation: blinker 1s linear infinite;
 }

@@ -69,7 +69,7 @@ class Nav extends Component {
             className="fl-hamburger btn-icon"
             onClick={this.toggleNav}
           >
-            <Hamburger class="fl-hamburger__icon" />
+            <Hamburger className="fl-hamburger__icon" />
           </button>
         </div>
         <Fleets

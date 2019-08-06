@@ -3,7 +3,7 @@ $ring-width: 3px;
 
 .fl-preloader {
   display: inline-block;
-  border: $ring-width solid $primary-color;
+  border: $ring-width solid $secondary-color;
   border-top: $ring-width solid $white;
   border-radius: 50%;
   width: $preloader-size;

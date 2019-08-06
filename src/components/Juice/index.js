@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import SparkIcon from '../../assets/spark.svg';
+import { ReactComponent as SparkIcon } from '../../assets/spark.svg';
 
 const Juice = ({ value, isCharging }) => {
   const juiceClass = clsx(
@@ -10,9 +10,7 @@ const Juice = ({ value, isCharging }) => {
 
   return (
     <div className="fl-juice">
-      {isCharging && (
-        <img className="fl-juice__charging" src={SparkIcon} alt="Charging" />
-      )}
+      {isCharging && <SparkIcon className="fl-juice__charging" />}
       <div className={juiceClass} style={{ height: `${value || 0}%` }} />
     </div>
   );

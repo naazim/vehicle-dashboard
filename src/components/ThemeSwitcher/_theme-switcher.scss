@@ -1,5 +1,5 @@
 .fl-theme-switcher {
-  color: $secondary-color;
+  color: $primary-color;
   display: inline-flex;
   align-items: center;
   text-transform: capitalize;
@@ -9,7 +9,7 @@
   transition: color $transition-time ease-in-out;
 
   &.fl-theme-switcher--light {
-    color: $primary-color;
+    color: $secondary-color;
   }
 }
 
@@ -17,12 +17,12 @@
   margin-right: $spacing-s;
 
   path {
-    fill: $secondary-color;
+    fill: $primary-color;
     will-change: fill;
     transition: fill $transition-time ease-in-out;
 
     .fl-theme-switcher--light & {
-      fill: $primary-color;
+      fill: $secondary-color;
     }
   }
 }
