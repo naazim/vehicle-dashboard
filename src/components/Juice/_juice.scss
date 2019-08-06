@@ -1,9 +1,10 @@
 $juice-block: 4px;
+$juice-block-top: 10px;
 $secondary-color-light: #4cc7f4;
 
 .fl-juice {
-  width: 56px;
-  height: 80px;
+  width: 46px;
+  height: 60px;
   border-radius: 10px;
   border: $juice-block solid $primary-color;
   margin-top: $juice-block;
@@ -17,9 +18,11 @@ $secondary-color-light: #4cc7f4;
     content: '';
     background-color: $primary-color;
     width: 60%;
-    height: $juice-block;
+    height: $juice-block-top;
     display: block;
-    top: -$juice-block * 2;
+    top: -$juice-block-top * 1.2;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     left: 0;
     right: 0;
     margin: auto;
