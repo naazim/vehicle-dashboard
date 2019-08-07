@@ -8,11 +8,17 @@
   overflow: hidden;
 }
 
+.vehicle-detail__data {
+  color: var(--text-primary);
+  transition: color $transition-time ease-in-out;
+}
+
 .vehicle-detail__name {
-  color: $prussian-blue;
+  color: var(--primary);
   font-size: 4rem;
   font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0 0 $spacing-m;
+  transition: color $transition-time ease-in-out;
 }
 
 .vehicle-detail__picture {
@@ -102,12 +108,12 @@
   box-shadow: -30px 2px 34px 0 rgba(0, 166, 255, 0.19), 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 12px 14px 0 rgba(4, 50, 84, 0.43), 6px -8px 24px 0 rgba(44, 209, 255, 0.35);
   left: 50%;
   bottom: 200px;
-  transition: left $transition-time ease-out, bottom $transition-time ease-out;
+  transition: left $transition-time ease-out, bottom $transition-time ease-out, background-color $transition-time ease-in;
 
   &--active {
     z-index: 1;
     left: $spacing-l;
     bottom: $spacing-l;
-    transition: left $transition-time ease-out reverse, bottom $transition-time ease-out reverse;
+    transition: left $transition-time ease-out reverse, bottom $transition-time ease-out reverse, background-color $transition-time ease-in;
   }
 }

@@ -49,6 +49,7 @@ button:not(:disabled) {
   height: $btn-height;
   width: $btn-height;
   border-radius: 100%;
+  transition: background-color $transition-time ease-in;
 
   path {
     fill: $white;

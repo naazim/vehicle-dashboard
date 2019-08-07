@@ -15,7 +15,8 @@ $profile-pic-size: 58px;
 }
 
 .fl-user__signout {
-  color: $prussian-blue;
+  color: var(--text-primary);
+  transition: color $transition-time ease-in;
 }
 .fl-user__content {
   display: flex;

@@ -32,16 +32,19 @@
 
   svg:not(.custom) {
     path {
-      fill: $prussian-blue;
+      fill: var(--primary);
+      transition: fill $transition-time ease-in;
     }
   }
 
   .custom  {
     .stroke {
-      stroke: $prussian-blue;
+      stroke: var(--primary);
+      transition: stroke $transition-time ease-in;
     }
     .fill {
-      fill: $prussian-blue;
+      fill: var(--primary);
+      transition: fill $transition-time ease-in;
     }
   }
 }
