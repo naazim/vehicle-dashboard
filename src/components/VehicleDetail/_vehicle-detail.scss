@@ -1,4 +1,6 @@
 .vehicle-detail {
+  display: flex;
+  flex-direction: column;
   flex: 1 0 0;
   padding: $spacing-l;
   animation: fade-in .5s;
@@ -50,6 +52,7 @@
     position: absolute;
     bottom: -50%;
     transform: scale(1.5);
+    pointer-events: none;
   }
 }
 
@@ -75,4 +78,43 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: $spacing-l;
+}
+
+.vehicle-detail__footer {
+  padding-top: $spacing-l;
+  display: flex;
+  flex: 1 0 0;
+  justify-content: center;
+}
+
+.vehicle-detail__map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  right: 0;
+  border-radius: 60% / 38%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transform: translateY(100%);
+  transition: transform $transition-time ease-in-out;
+
+  &--active {
+    transform: translateY(0);
+  }
+}
+
+.btn-circle__map {
+  position: absolute;
+  box-shadow: -30px 2px 34px 0 rgba(0, 166, 255, 0.19), 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 12px 14px 0 rgba(4, 50, 84, 0.43), 6px -8px 24px 0 rgba(44, 209, 255, 0.35);
+  left: 50%;
+  bottom: 200px;
+  transition: left $transition-time ease-out, bottom $transition-time ease-out;
+
+  &--active {
+    z-index: 1;
+    left: $spacing-l;
+    bottom: $spacing-l;
+    transition: left $transition-time ease-out reverse, bottom $transition-time ease-out reverse;
+  }
 }

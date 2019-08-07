@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import clsx from 'clsx';
 import { setTheme } from '../../helpers/setTheme';
 import { Header } from '../../components/Header';
 import { Nav } from '../../components/Nav';
@@ -10,6 +11,10 @@ class Home extends Component {
     theme: 'dark'
   };
 
+  componentDidMount() {
+    // setTheme(this.state.theme);
+  }
+
   onVehicleClick = data => {
     this.setState(() => ({
       vehicleData: data
@@ -18,18 +23,21 @@ class Home extends Component {
 
   toggleTheme = () => {
     const { theme } = this.state;
-    this.setState(() => ({
-      theme: theme === 'dark' ? 'light' : 'dark'
-    }));
-
-    setTheme(theme);
+    this.setState(
+      () => ({
+        theme: this.state.theme === 'dark' ? 'light' : 'dark'
+      }),
+      () => {
+        setTheme(theme);
+      }
+    );
   };
 
   render() {
     const { vehicleData, theme } = this.state;
 
     return (
-      <div className="fl-container">
+      <div className={clsx('fl-container', `theme-${theme}`)}>
         <Nav onVehicleClick={this.onVehicleClick} />
         <div className="fl-content">
           <Header toggleTheme={this.toggleTheme} currentTheme={theme} />

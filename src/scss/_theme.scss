@@ -3,8 +3,9 @@
 
 $css-vars-use-native: true;
 
-$primary: $piction-blue;
+$primary: $cerulean;
 $primaryBackground: $prussian-blue;
+//$primaryText:
 
 @include css-vars((
   --primary: $primary,

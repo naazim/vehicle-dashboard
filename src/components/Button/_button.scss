@@ -43,3 +43,10 @@ button:not(:disabled) {
   background-color: $white;
   border-color: $piction-blue;
 }
+
+.btn-circle {
+  background-color: var(--primary);
+  height: $btn-height;
+  width: $btn-height;
+  border-radius: 100%;
+}

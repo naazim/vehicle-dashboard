@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   background-color: var(--bg-primary);
-  will-change: width;
   width: $nav-panel-width;
   transition: margin-left $transition-time ease-in-out, background-color $transition-time ease-in-out;
 }

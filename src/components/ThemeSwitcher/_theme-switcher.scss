@@ -5,7 +5,6 @@
   text-transform: capitalize;
   padding: $spacing-m 0;
   font-size: 1rem;
-  will-change: color;
   transition: color $transition-time ease-in-out;
 
   &.fl-theme-switcher--light {
