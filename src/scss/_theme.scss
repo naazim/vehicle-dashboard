@@ -1,0 +1,12 @@
+@import 'node_modules/css-vars/css-vars';
+@import 'colors';
+
+$css-vars-use-native: true;
+
+$primary: $piction-blue;
+$primaryBackground: $prussian-blue;
+
+@include css-vars((
+  --primary: $primary,
+  --bg-primary: $primaryBackground
+));

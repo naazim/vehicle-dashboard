@@ -32,16 +32,16 @@
 
   svg:not(.custom) {
     path {
-      fill: $primary-color;
+      fill: $prussian-blue;
     }
   }
 
   .custom  {
     .stroke {
-      stroke: $primary-color;
+      stroke: $prussian-blue;
     }
     .fill {
-      fill: $primary-color;
+      fill: $prussian-blue;
     }
   }
 }

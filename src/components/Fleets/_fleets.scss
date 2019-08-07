@@ -5,11 +5,11 @@ $fleet-btn-height: 96px;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  border-top: 1px solid $light-color;
+  border-top: 1px solid $astronaut;
 }
 
 .fleet__item {
-  border-bottom: 1px solid $light-color;
+  border-bottom: 1px solid $astronaut;
 }
 
 .fleet__btn {
@@ -21,17 +21,17 @@ $fleet-btn-height: 96px;
   border: none;
   text-align: left;
   color: $white;
-  background-color: $primary-color;
+  background-color: $prussian-blue;
 
 
   &:hover, &focus {
-    background-color: $intense-color;
+    background-color: $stratos;
   }
 }
 
 .fleet__label {
   background-color: $white;
-  color: $primary-color;
+  color: $prussian-blue;
   width: 40px;
   padding: 2px 10px;
   margin-right: $spacing-m;

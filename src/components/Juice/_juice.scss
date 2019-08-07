@@ -1,12 +1,12 @@
 $juice-block: 4px;
 $juice-block-top: 10px;
-$secondary-color-light: #4cc7f4;
+$piction-blue-light: #4cc7f4;
 
 .fl-juice {
   width: 46px;
   height: 60px;
   border-radius: 10px;
-  border: $juice-block solid $primary-color;
+  border: $juice-block solid $prussian-blue;
   margin-top: $juice-block;
   padding: $juice-block;
   position: relative;
@@ -16,7 +16,7 @@ $secondary-color-light: #4cc7f4;
   &::before {
     position: absolute;
     content: '';
-    background-color: $primary-color;
+    background-color: $prussian-blue;
     width: 60%;
     height: $juice-block-top;
     display: block;
@@ -30,7 +30,7 @@ $secondary-color-light: #4cc7f4;
 }
 
 .fl-juice__meter {
-  background-color: $primary-color;
+  background-color: $prussian-blue;
   border-radius: 4px;
   height: 0;
   width: 100%;

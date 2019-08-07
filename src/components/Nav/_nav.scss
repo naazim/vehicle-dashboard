@@ -1,10 +1,10 @@
 .fl-nav {
   display: flex;
   flex-direction: column;
-  background-color: $primary-color;
+  background-color: var(--bg-primary);
   will-change: width;
   width: $nav-panel-width;
-  transition: margin-left $transition-time ease-in-out;
+  transition: margin-left $transition-time ease-in-out, background-color $transition-time ease-in-out;
 }
 
 .fl-nav--open {
@@ -51,7 +51,7 @@
     fill: $white;
 
     .fl-nav--closed & {
-      fill: $primary-color;
+      fill: $prussian-blue;
     }
   }
 }

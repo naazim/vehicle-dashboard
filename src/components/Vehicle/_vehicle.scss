@@ -1,10 +1,10 @@
 $fleet-vehicle-height: 60px;
 
 .fl-vehicle__btn {
-  background-color: $intense-color;
+  background-color: $stratos;
   color: $white;
   border: none;
-  border-top: 1px solid $intense-active-color;
+  border-top: 1px solid $midnight;
   height: $fleet-vehicle-height;
   padding: 0 $spacing-m;
   text-align: left;
@@ -13,7 +13,7 @@ $fleet-vehicle-height: 60px;
   width: 100%;
 
   &:hover, &:focus {
-    background-color: $intense-active-color;
+    background-color: $midnight;
   }
 }
 

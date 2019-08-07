@@ -18,7 +18,7 @@
 }
 
 .vehicle-detail__name {
-  color: $primary-color;
+  color: $prussian-blue;
   font-size: 4rem;
   font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0 0 $spacing-m;
@@ -32,7 +32,7 @@
     content: attr(data-title);
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 20rem;
-    color: $light-white;
+    color: $iron;
     line-height: 0.8;
     position: absolute;
     bottom: 85%;
@@ -57,7 +57,7 @@
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 20rem;
   margin-bottom: 7rem;
-  color: $light-white;
+  color: $iron;
   line-height: 0.8;
   position: absolute;
   bottom: 45%;

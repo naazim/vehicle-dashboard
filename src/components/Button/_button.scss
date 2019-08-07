@@ -26,8 +26,8 @@ button:not(:disabled) {
 
 .btn-primary {
   color: #fff;
-  background-color: $secondary-color;
-  border-color: $secondary-color;
+  background-color: $piction-blue;
+  border-color: $piction-blue;
 }
 
 .btn-icon {
@@ -39,7 +39,7 @@ button:not(:disabled) {
 }
 
 .btn-light {
-  color: $secondary-color;
+  color: $piction-blue;
   background-color: $white;
-  border-color: $secondary-color;
+  border-color: $piction-blue;
 }
