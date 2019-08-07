@@ -2,12 +2,16 @@
 @import 'colors';
 
 $css-vars-use-native: true;
-
 $primary: $cerulean;
 $primaryBackground: $prussian-blue;
+$secondary: $white;
+
 //$primaryText:
 
 @include css-vars((
   --primary: $primary,
-  --bg-primary: $primaryBackground
+  --secondary: $secondary,
+  --bg-primary: $primaryBackground,
+  --bg-secondary: $midnight,
+  --bg-header: $white
 ));

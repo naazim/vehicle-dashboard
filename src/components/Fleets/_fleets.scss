@@ -5,24 +5,25 @@ $fleet-btn-height: 96px;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  border-top: 1px solid $astronaut;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .fleet__item {
-  border-bottom: 1px solid $astronaut;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .fleet__btn {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 0 $spacing-m;
   height: $fleet-btn-height;
   border: none;
   text-align: left;
-  color: $white;
-  background-color: $prussian-blue;
-
+  color: var(--secondary);
+  background-color: transparent;
+  transition: color $transition-time ease-in;
 
   &:hover, &focus {
     background-color: $stratos;
@@ -30,7 +31,7 @@ $fleet-btn-height: 96px;
 }
 
 .fleet__label {
-  background-color: $white;
+  background-color: var(--secondary);
   color: $prussian-blue;
   width: 40px;
   padding: 2px 10px;
@@ -39,7 +40,7 @@ $fleet-btn-height: 96px;
   display: inline-block;
   text-align: center;
   font-size: .8rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out;
+  transition: color .15s ease-in, background-color .15s ease-in;
 }
 
 .fleet__name {

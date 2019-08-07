@@ -70,15 +70,18 @@ class VehicleDetail extends Component {
               </IconText>
             </div>
           </div>
-          <div>vehicleId: {vehicleId}</div>
-          <div>vehicleStatus: {vehicleStatus}</div>
-          <div>vin: {vin}</div>
-          <div>make: {make}</div>
-          <div>model: {model}</div>
-          <div>mileage: {mileage}</div>
-          <div>vehicleInteriorTemperature: {vehicleInteriorTemperature}</div>
-          <div>fleetId: {fleetId}</div>
-          <div>fuellevel: {fuellevel}</div>
+
+          <div className="vehicle-detail__info">
+            <div>vehicleId: {vehicleId}</div>
+            <div>vehicleStatus: {vehicleStatus}</div>
+            <div>vin: {vin}</div>
+            <div>make: {make}</div>
+            <div>model: {model}</div>
+            <div>mileage: {mileage}</div>
+            <div>vehicleInteriorTemperature: {vehicleInteriorTemperature}</div>
+            <div>fleetId: {fleetId}</div>
+            <div>fuellevel: {fuellevel}</div>
+          </div>
 
           <div className="vehicle-detail__picture" data-title={name}>
             {/*<div className="vehicle-detail__brand">{name}</div>*/}

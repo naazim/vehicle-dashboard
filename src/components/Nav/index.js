@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Fleets } from '../../components/Fleets';
-import FleetLogo from '../../assets/fleet-logo.svg';
+import { ReactComponent as FleetLogo } from '../../assets/fleet-logo.svg';
 import { ReactComponent as Hamburger } from '../../assets/burger.svg';
 import clsx from 'clsx';
 
@@ -63,7 +63,8 @@ class Nav extends Component {
         )}
       >
         <div className="fl-nav__header">
-          <img className="fl-nav__logo" src={FleetLogo} alt="Fleet logo" />
+          <FleetLogo className="fl-nav__logo" />
+
           <button
             type="button"
             className="fl-hamburger btn-icon"
