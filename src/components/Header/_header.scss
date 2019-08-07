@@ -1,9 +1,10 @@
 .fl-header {
   height: $header-height;
-  background-color: $white;
+  background-color: var(--bg-header);
   color: $prussian-blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: $spacing-s $spacing-m;
+  transition: background-color $transition-time ease-in;
 }
