@@ -8,8 +8,7 @@ import { ReactComponent as UnlockIcon } from '../../assets/unlocked.svg';
 import { ReactComponent as PlateIcon } from '../../assets/plate.svg';
 import { ReactComponent as StatusIcon } from '../../assets/status.svg';
 import { ReactComponent as GpsIcon } from '../../assets/gps.svg';
-
-import BeetleImg from '../../assets/vehicles/2019-beetle-wolfsburg.png';
+import { vehicleImages } from '../../helpers/vehicle-images';
 
 class VehicleDetail extends Component {
   state = {
@@ -44,6 +43,8 @@ class VehicleDetail extends Component {
     const batteryStatus =
       batteryChangeLevel &&
       `${batteryChangeLevel}% ${!!batteryChargingStatus ? '(Charging)' : ''}`;
+
+    const imageUrl = vehicleImages.filter(image => image.name === name)[0].src;
 
     return (
       <div className="vehicle-detail">
@@ -85,11 +86,7 @@ class VehicleDetail extends Component {
 
           <div className="vehicle-detail__picture" data-title={name}>
             {/*<div className="vehicle-detail__brand">{name}</div>*/}
-            <img
-              className="vehicle-detail__image"
-              src={BeetleImg}
-              alt="Beetle"
-            />
+            <img className="vehicle-detail__image" src={imageUrl} alt={name} />
           </div>
         </div>
 
