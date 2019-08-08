@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class HereMap extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class HereMap extends Component {
       center: props.center,
       zoom: props.zoom,
       theme: props.theme,
-      style: props.style,
+      style: props.style
     };
   }
 
@@ -27,7 +27,7 @@ class HereMap extends Component {
 
     this.map = new window.H.Map(container, layer.normal.map, {
       center: this.state.center,
-      zoom: this.state.zoom,
+      zoom: this.state.zoom
     });
 
     const events = new window.H.mapevents.MapEvents(this.map);
@@ -38,9 +38,7 @@ class HereMap extends Component {
   }
 
   render() {
-    return (
-      <div id="here-map" className={this.props.className}/>
-    );
+    return <div id="here-map" className={this.props.className} />;
   }
 }
 

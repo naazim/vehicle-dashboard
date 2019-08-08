@@ -2,9 +2,9 @@ export function configureFakeBackend() {
   let users = [
     {
       id: 1,
-      username: 'test',
+      username: 'bryan',
       password: 'test',
-      firstName: 'John',
+      firstName: 'Bryan',
       lastName: 'Smith'
     }
   ];
