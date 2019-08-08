@@ -109,8 +109,8 @@ class VehicleDetail extends Component {
           className={clsx('vehicle-detail__map', {
             'vehicle-detail__map--active': isMapVisible
           })}
-          lat="42.345978"
-          lng="-83.0405"
+          lat="52.5200"
+          lng="13.4050"
         />
       </div>
     );

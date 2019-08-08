@@ -30,6 +30,9 @@ class HereMap extends Component {
       zoom: this.state.zoom
     });
 
+    const Marker = new window.H.map.Marker(this.props.center);
+    this.map.addObject(Marker);
+
     const events = new window.H.mapevents.MapEvents(this.map);
     // eslint-disable-next-line
     const behavior = new window.H.mapevents.Behavior(events);
