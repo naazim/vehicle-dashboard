@@ -28,7 +28,7 @@
   &::before {
     content: attr(data-title);
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20rem;
+    font-size: 16rem;
     color: $iron;
     line-height: 0.8;
     position: absolute;
@@ -43,6 +43,10 @@
       color: $mercury;
       opacity: 0.07;
     }
+
+    //@include media('>=xlarge') {
+    //  font-size: 20rem;
+    //}
   }
 
   &::after {
@@ -119,14 +123,12 @@
 .btn-circle__map {
   position: absolute;
   box-shadow: -30px 2px 34px 0 rgba(0, 166, 255, 0.19), 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 12px 14px 0 rgba(4, 50, 84, 0.43), 6px -8px 24px 0 rgba(44, 209, 255, 0.35);
-  left: 50%;
-  bottom: 200px;
-  transition: left $transition-time ease-out, bottom $transition-time ease-out, background-color $transition-time ease-in;
+  left: $spacing-l;
+  bottom: $spacing-l;
+  transition: background-color $transition-time ease-in;
 
   &--active {
     z-index: 1;
-    left: $spacing-l;
-    bottom: $spacing-l;
-    transition: left $transition-time ease-out reverse, bottom $transition-time ease-out reverse, background-color $transition-time ease-in;
+    transition: background-color $transition-time ease-in;
   }
 }
