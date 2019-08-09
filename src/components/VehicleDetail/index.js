@@ -17,17 +17,19 @@ class VehicleDetail extends Component {
     location: { lat: '52.5200', lng: '13.4050' }
   };
 
-  async componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps) {
     if (this.props.vehicleData.vehicleId !== prevProps.vehicleData.vehicleId) {
       const vehicleId = this.props.vehicleData.vehicleId;
       const API_VEHICLE_POSITION_URL = `/vehicle/${vehicleId}/parkingposition`;
 
-      await fetch(API_VEHICLE_POSITION_URL)
+      fetch(API_VEHICLE_POSITION_URL)
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           this.setState(() => ({
-            location: { lat: data.latitude, lng: data.latitude }
+            location: {
+              lat: parseFloat(data.latitude),
+              lng: parseFloat(data.longitude)
+            }
           }));
         })
         .catch(console.log);
@@ -65,6 +67,7 @@ class VehicleDetail extends Component {
       `${batteryChangeLevel}% ${!!batteryChargingStatus ? '(Charging)' : ''}`;
 
     const imageUrl = vehicleImages.filter(image => image.name === name)[0].src;
+    console.log('Outside map ====', this.state.location);
 
     return (
       <div className="vehicle-detail">

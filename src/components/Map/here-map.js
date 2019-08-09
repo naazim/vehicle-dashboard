@@ -7,6 +7,7 @@ class HereMap extends Component {
 
     this.platform = null;
     this.map = null;
+    this.marker = null;
 
     this.state = {
       app_id: props.app_id,
@@ -32,11 +33,21 @@ class HereMap extends Component {
 
   addMarker = () => {
     // Create an icon, an object holding the latitude and longitude, and a marker:
-    const icon = new window.H.map.Icon(CarIcon),
-      marker = new window.H.map.Marker(this.state.center, { icon });
+    const icon = new window.H.map.Icon(CarIcon);
+    this.marker = new window.H.map.Marker(this.state.center, { icon });
     // Add the marker to the map
-    this.map.addObject(marker);
+    this.map.addObject(this.marker);
   };
+
+  componentDidUpdate(prevProps) {
+    const { center } = this.props;
+    const isMapAnimated = true;
+
+    if (prevProps.center !== center) {
+      this.marker.setPosition(center, isMapAnimated);
+      this.map.setCenter(center, isMapAnimated);
+    }
+  }
 
   componentDidMount() {
     this.platform = new window.H.service.Platform(this.state);
