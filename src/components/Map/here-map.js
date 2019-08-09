@@ -38,6 +38,9 @@ class HereMap extends Component {
     const behavior = new window.H.mapevents.Behavior(events);
     // eslint-disable-next-line
     const ui = new window.H.ui.UI.createDefault(this.map, layer);
+
+    // add a resize listener to make sure that the map occupies the whole container
+    window.addEventListener('resize', () => this.map.getViewPort().resize());
   }
 
   render() {
