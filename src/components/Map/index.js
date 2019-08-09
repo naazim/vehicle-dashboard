@@ -8,7 +8,7 @@ const Map = ({ center, className, theme }) => (
     app_id={process.env.REACT_APP_MAP_APP_ID}
     app_code={process.env.REACT_APP_MAP_APP_CODE}
     center={center}
-    zoom={12}
+    zoom={14}
     theme={theme}
   />
 );
