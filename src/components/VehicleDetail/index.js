@@ -130,6 +130,7 @@ class VehicleDetail extends Component {
             'vehicle-detail__map--active': isMapVisible
           })}
           center={this.state.location}
+          theme="normal.day"
         />
       </div>
     );

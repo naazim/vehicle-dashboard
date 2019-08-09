@@ -60,7 +60,7 @@ class HereMap extends Component {
       zoom: this.state.zoom
     });
 
-    this.setTheme('normal.day', 'fleet');
+    this.setTheme(this.props.theme, 'fleet');
 
     this.addMarker();
 
