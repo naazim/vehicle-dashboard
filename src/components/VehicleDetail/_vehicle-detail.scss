@@ -101,22 +101,19 @@
 
 .vehicle-detail__map {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  height: 50%;
+  height: 100%;
   right: 0;
-  border-radius: 60% / 38%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(100%);
-  transition: transform $transition-time ease-in-out, opacity $transition-time ease-in-out, visibility $transition-time ease-in-out;
+  opacity: 0.04;
+  z-index: -9999;
+  pointer-events: none;
+  transition: opacity $transition-time ease-in;
 
   &--active {
-    transform: translateY(0);
     opacity: 1;
-    visibility: visible;
+    z-index: 0;
+    transition: opacity $transition-time ease-out;
   }
 }
 
