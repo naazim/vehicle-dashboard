@@ -12,8 +12,27 @@ import { vehicleImages } from '../../helpers/vehicle-images';
 
 class VehicleDetail extends Component {
   state = {
-    isMapVisible: false
+    isMapVisible: false,
+    vehicleId: null,
+    location: { lat: '52.5200', lng: '13.4050' }
   };
+
+  async componentDidUpdate(prevProps) {
+    if (this.props.vehicleData.vehicleId !== prevProps.vehicleData.vehicleId) {
+      const vehicleId = this.props.vehicleData.vehicleId;
+      const API_VEHICLE_POSITION_URL = `/vehicle/${vehicleId}/parkingposition`;
+
+      await fetch(API_VEHICLE_POSITION_URL)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          this.setState(() => ({
+            location: { lat: data.latitude, lng: data.latitude }
+          }));
+        })
+        .catch(console.log);
+    }
+  }
 
   showMap = () => {
     this.setState(() => ({
@@ -38,6 +57,7 @@ class VehicleDetail extends Component {
       batteryChargingStatus,
       fleetId
     } = this.props.vehicleData;
+
     const { isMapVisible } = this.state;
 
     const batteryStatus =
@@ -106,8 +126,7 @@ class VehicleDetail extends Component {
           className={clsx('vehicle-detail__map', {
             'vehicle-detail__map--active': isMapVisible
           })}
-          lat="52.5200"
-          lng="13.4050"
+          center={this.state.location}
         />
       </div>
     );

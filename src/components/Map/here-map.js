@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CarIcon from '../../assets/car-location.svg';
 
 class HereMap extends Component {
   constructor(props) {
@@ -17,7 +18,25 @@ class HereMap extends Component {
     };
   }
 
-  // TODO: Add theme selection discussed later HERE
+  setTheme = (theme, style) => {
+    const tiles = this.platform.getMapTileService({ type: 'base' });
+    const fleetStyleLayer = tiles.createTileLayer(
+      'maptile',
+      theme,
+      256,
+      'png8',
+      { style }
+    );
+    this.map.setBaseLayer(fleetStyleLayer);
+  };
+
+  addMarker = () => {
+    // Create an icon, an object holding the latitude and longitude, and a marker:
+    const icon = new window.H.map.Icon(CarIcon),
+      marker = new window.H.map.Marker(this.state.center, { icon });
+    // Add the marker to the map
+    this.map.addObject(marker);
+  };
 
   componentDidMount() {
     this.platform = new window.H.service.Platform(this.state);
@@ -30,8 +49,9 @@ class HereMap extends Component {
       zoom: this.state.zoom
     });
 
-    const Marker = new window.H.map.Marker(this.props.center);
-    this.map.addObject(Marker);
+    this.setTheme('normal.day', 'fleet');
+
+    this.addMarker();
 
     const events = new window.H.mapevents.MapEvents(this.map);
     // eslint-disable-next-line
