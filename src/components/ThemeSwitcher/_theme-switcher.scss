@@ -1,27 +1,19 @@
 .fl-theme-switcher {
-  color: $prussian-blue;
+  color: var(--primary);
   display: inline-flex;
   align-items: center;
   text-transform: capitalize;
   padding: $spacing-m 0;
   font-size: 1rem;
-  transition: color $transition-time ease-in-out;
-
-  &.fl-theme-switcher--light {
-    color: $piction-blue;
-  }
+  transition: color $transition-time ease-in;
 }
 
 .fl-theme-switcher__icon {
   margin-right: $spacing-s;
 
   path {
-    fill: $prussian-blue;
+    fill: var(--primary);
     will-change: fill;
-    transition: fill $transition-time ease-in-out;
-
-    .fl-theme-switcher--light & {
-      fill: $piction-blue;
-    }
+    transition: fill $transition-time ease-in;
   }
 }
