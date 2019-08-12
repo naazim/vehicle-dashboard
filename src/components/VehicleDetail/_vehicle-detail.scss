@@ -8,6 +8,12 @@
   overflow: hidden;
 }
 
+.vehicle-detail__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
 .vehicle-detail__data {
   color: var(--text-primary);
   transition: color $transition-time ease-in-out;
@@ -24,6 +30,12 @@
 .vehicle-detail__picture {
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: $spacing-l * 2;
 
   &::before {
     content: attr(data-title);
@@ -32,7 +44,7 @@
     color: $iron;
     line-height: 0.8;
     position: absolute;
-    bottom: 85%;
+    bottom: 54%;
     left: 0;
     right: 0;
     z-index: -1;
@@ -59,6 +71,7 @@
     bottom: -50%;
     transform: scale(1.5);
     pointer-events: none;
+    z-index: -1;
   }
 }
 
@@ -76,8 +89,8 @@
 
 .vehicle-detail__image {
   width: auto;
-  max-width: 80%;
   position: relative;
+  max-width: 900px;
   max-height: $image-height;
 }
 
@@ -91,13 +104,13 @@
   color: var(--text-primary);
   transition: color .15s ease-in;
   position: absolute;
+  top: 536px;
 }
 
 .vehicle-detail__footer {
-  padding-top: $spacing-l;
+  height: $btn-height;
   display: flex;
-  flex: 1 0 0;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .vehicle-detail__map {
@@ -119,10 +132,7 @@
 }
 
 .btn-circle__map {
-  position: absolute;
   box-shadow: -30px 2px 34px 0 rgba(0, 166, 255, 0.19), 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 12px 14px 0 rgba(4, 50, 84, 0.43), 6px -8px 24px 0 rgba(44, 209, 255, 0.35);
-  left: $spacing-l;
-  bottom: $spacing-l;
   transition: background-color $transition-time ease-in;
 
   &--active {

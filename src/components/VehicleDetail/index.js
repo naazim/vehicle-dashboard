@@ -9,6 +9,9 @@ import { ReactComponent as UnlockIcon } from '../../assets/unlocked.svg';
 import { ReactComponent as PlateIcon } from '../../assets/plate.svg';
 import { ReactComponent as StatusIcon } from '../../assets/status.svg';
 import { ReactComponent as GpsIcon } from '../../assets/gps.svg';
+import { ReactComponent as MileageIcon } from '../../assets/mileage.svg';
+import { ReactComponent as TemperatureIcon } from '../../assets/temperature.svg';
+import { ReactComponent as InfoIcon } from '../../assets/info.svg';
 import { vehicleImages } from '../../helpers/vehicle-images';
 
 class VehicleDetail extends Component {
@@ -95,6 +98,17 @@ class VehicleDetail extends Component {
                   isCharging={batteryChargingStatus}
                 />
               </IconText>
+              <IconText
+                label="interior temperature"
+                value={vehicleInteriorTemperature}
+              >
+                <TemperatureIcon />
+              </IconText>
+            </div>
+            <div className="vehicle-detail__row">
+              <IconText label="mileage" value={mileage} type="number">
+                <MileageIcon />
+              </IconText>
               <IconText label="vehicle Number" value={licensePlateNumber}>
                 <PlateIcon />
               </IconText>
@@ -114,7 +128,6 @@ class VehicleDetail extends Component {
           </div>
 
           <div className="vehicle-detail__picture" data-title={name}>
-            {/*<div className="vehicle-detail__brand">{name}</div>*/}
             <img className="vehicle-detail__image" src={imageUrl} alt={name} />
           </div>
         </div>
@@ -128,6 +141,15 @@ class VehicleDetail extends Component {
             onClick={this.showMap}
           >
             <GpsIcon />
+          </button>
+          <button
+            type="button"
+            className={clsx('btn-icon btn-circle btn-circle__map', {
+              'btn-circle__map--active': isMapVisible
+            })}
+            onClick={this.showMap}
+          >
+            <InfoIcon />
           </button>
         </footer>
 
