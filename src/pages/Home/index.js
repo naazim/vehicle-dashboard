@@ -6,13 +6,17 @@ import { Nav } from '../../components/Nav';
 import { VehicleDetail } from '../../components/VehicleDetail';
 
 class Home extends Component {
-  state = {
-    vehicleData: null,
-    theme: 'dark'
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      vehicleData: null,
+      theme: 'dark'
+    };
+  }
 
   componentDidMount() {
-    // setTheme(this.state.theme);
+    this.toggleTheme();
   }
 
   onVehicleClick = data => {
