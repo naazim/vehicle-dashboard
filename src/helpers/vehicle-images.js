@@ -2,40 +2,36 @@ export const vehicleImages = [
   {
     name: 'eGolf (NF)',
     src:
-      'https://www.volkswagen.es/content/dam/vw-ngw/vw_pkw/importers/es/modelos/e-golf/1280x720-eGolf-calculadora-2.png/_jcr_content/renditions/original.transform/max/img.png'
+      'https://dl.dropboxusercontent.com/s/iredgum445rz15u/eGolf%20%28NF%29.webp'
   },
   {
     name: 'Beetle C.',
-    src:
-      'https://images.dealer.com/ddc/vehicles/2019/Volkswagen/Beetle/Convertible/perspective/front-left/2019_76.png'
+    src: 'https://dl.dropboxusercontent.com/s/4milk4tpg4ncqcc/Beetle%20C.webp'
   },
   {
     name: 'Golf Sportsvan',
     src:
-      'https://web21st.imgix.net/assets/images/new-vehicles/volkswagen/volkswagen-golf-sv.png'
+      'https://dl.dropboxusercontent.com/s/q6dq8lran7nf83k/Golf%20Sportsvan.webp'
   },
   {
     name: 'eUP',
-    src:
-      'https://www.vw.co.za/content/dam/vw-ngw/vw_pkw/importers/za/Showrooms/up!/MODELS-SIZE-9NOV_up-cross-2.png/_jcr_content/renditions/original.transform/maxplus/img.png'
+    src: 'https://dl.dropboxusercontent.com/s/xps9hpqi8qzqxys/eUP.webp'
   },
   {
     name: 'Passat',
     src:
-      'https://carwow-uk-1.imgix.net/model-photos/original/volkswagen_15passatcmftwg8b_lowaggressive_autumn-brown-metallic.png?ixlib=rb-1.1.0&fit=crop&w=1140&h=757&q=60&cs=tinysrgb&auto=format'
+      'https://dl.dropboxusercontent.com/s/q6dq8lran7nf83k/Golf%20Sportsvan.webp'
   },
   {
     name: 'Bora',
-    src:
-      'https://enginenu.com/wp-content/uploads/2019/04/34-The-Best-Volkswagen-Bora-Variant-Redesign-Price-And-Review-Spesification.jpg'
+    src: 'https://dl.dropboxusercontent.com/s/tgyzre48t774nqx/Bora.webp'
   },
   {
     name: 'Tiguan',
-    src:
-      'https://st.motortrend.com/uploads/sites/10/2016/06/2016-volkswagen-tiguan-r-line-suv-angular-front.png'
+    src: 'https://dl.dropboxusercontent.com/s/1yc4bsbnxw86u86/Tiguan.webp'
   },
   {
     name: 'VW ID',
-    src: 'https://www.a-point.nl/wp-content/uploads/2019/05/Volkswagen-ID3.png'
+    src: 'https://dl.dropboxusercontent.com/s/bv576ucinrm6uoo/VW%20ID.webp'
   }
 ];
