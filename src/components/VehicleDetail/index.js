@@ -68,7 +68,6 @@ class VehicleDetail extends Component {
       `${batteryChangeLevel}% ${!!batteryChargingStatus ? '(Charging)' : ''}`;
 
     const imageUrl = vehicleImages.filter(image => image.name === name)[0].src;
-    console.log('Outside map ====', this.state.location);
 
     return (
       <div className="vehicle-detail">
@@ -86,7 +85,11 @@ class VehicleDetail extends Component {
               </IconText>
             </div>
             <div className="vehicle-detail__row">
-              <IconText label="Battery Charge" value={batteryStatus}>
+              <IconText
+                label="Battery Charge"
+                value={batteryStatus}
+                type="number"
+              >
                 <Juice
                   value={batteryChangeLevel}
                   isCharging={batteryChargingStatus}
