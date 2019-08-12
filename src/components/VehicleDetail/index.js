@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { Map } from '../Map';
 import { Juice } from '../Juice';
 import { IconText } from '../IconText';
+import { ScrambleAnimate } from '../ScrambleAnimate';
 import { ReactComponent as LockIcon } from '../../assets/locked.svg';
 import { ReactComponent as UnlockIcon } from '../../assets/unlocked.svg';
 import { ReactComponent as PlateIcon } from '../../assets/plate.svg';
@@ -72,7 +73,9 @@ class VehicleDetail extends Component {
     return (
       <div className="vehicle-detail">
         <div className="vehicle-detail__content">
-          <h1 className="vehicle-detail__name">{name}</h1>
+          <h1 className="vehicle-detail__name">
+            <ScrambleAnimate string={name} />
+          </h1>
           <div className="vehicle-detail__data">
             <div className="vehicle-detail__row">
               <IconText label="vehicle Lock Status" value={vehicleLockStatus}>

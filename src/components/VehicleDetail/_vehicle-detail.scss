@@ -17,7 +17,7 @@
   color: var(--primary);
   font-size: 4rem;
   font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: 0 0 $spacing-m;
+  margin: -$spacing-s 0 $spacing-l;
   transition: color $transition-time ease-in;
 }
 
