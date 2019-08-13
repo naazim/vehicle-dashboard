@@ -1,5 +1,5 @@
 .fl-header {
-  height: $header-height;
+  height: $header-height-m;
   background-color: var(--bg-header);
   color: var(--primary);
   display: flex;
@@ -7,4 +7,8 @@
   align-items: center;
   padding: $spacing-s $spacing-m;
   transition: background-color $transition-time ease-in, color $transition-time ease-in;
+
+  @include media('>=xlarge') {
+    height: $header-height-l;
+  }
 }

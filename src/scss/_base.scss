@@ -5,6 +5,14 @@ html, body, #root {
   height: 100%;
 }
 
+html {
+  font-size: 0.9rem;
+
+  @include media('>=xlarge') {
+    font-size: 1rem;
+  }
+}
+
 body {
   margin: 0;
   font-family: 'VW', -apple-system, BlinkMacSystemFont, sans-serif;

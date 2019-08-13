@@ -34,7 +34,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: $header-height;
+  height: $header-height-m;
+
+  @include media('>=xlarge') {
+    height: $header-height-l;
+  }
 }
 
 .fl-nav__logo {

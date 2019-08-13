@@ -19,13 +19,11 @@ export const vehicleImages = [
   },
   {
     name: 'Passat',
-    src:
-      'https://dl.dropboxusercontent.com/s/q6dq8lran7nf83k/Golf%20Sportsvan.webp'
+    src: 'https://dl.dropboxusercontent.com/s/ef2jwug90xtiyoz/Passat.webp'
   },
   {
     name: 'Passat 8 PA GTE',
-    src:
-      'https://dl.dropboxusercontent.com/s/q6dq8lran7nf83k/Golf%20Sportsvan.webp'
+    src: 'https://dl.dropboxusercontent.com/s/ef2jwug90xtiyoz/Passat.webp'
   },
   {
     name: 'Bora',

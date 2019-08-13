@@ -25,13 +25,14 @@
 
 .vehicle-detail__name {
   color: var(--primary);
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: -$spacing-m 0 $spacing-l;
+  margin: -$spacing-m 0 $spacing-m;
   transition: color $transition-time ease-in;
 
   @include media('>=xlarge') {
-    margin-top: -$spacing-s;
+    font-size: 4rem;
+    margin: -$spacing-s 0 $spacing-l;
   }
 }
 
@@ -94,8 +95,12 @@
 .vehicle-detail__image {
   width: auto;
   position: relative;
-  max-width: 900px;
+  max-width: 640px;
   max-height: $image-height;
+
+  @include media('>=xlarge') {
+    max-width: 900px;
+  }
 }
 
 .vehicle-detail__row {
@@ -125,6 +130,15 @@
   height: $btn-height;
   display: flex;
   justify-content: space-between;
+
+  position: absolute;
+  bottom: $spacing-m;
+  left: $spacing-m;
+  right: $spacing-m;
+
+  @include media('>=xlarge') {
+    position: static;
+  }
 }
 
 .vehicle-detail__map {
