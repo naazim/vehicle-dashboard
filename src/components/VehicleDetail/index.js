@@ -17,16 +17,18 @@ class VehicleDetail extends Component {
       vehicleStatus,
       name,
       licensePlateNumber,
-      mileage,
-      batteryChangeLevel,
+      odometer_km,
+      batteryStatus,
+      chargingStatus,
       vehicleLockStatus,
-      vehicleInteriorTemperature,
-      batteryChargingStatus
+      vehicleInteriorTemperature
     } = this.props.vehicleData;
 
-    const batteryStatus =
-      batteryChangeLevel &&
-      `${batteryChangeLevel}% ${!!batteryChargingStatus ? '(Charging)' : ''}`;
+    const isCharging = chargingStatus.chargingState === 'on';
+
+    const batteryInfo = batteryStatus.currentSOC_pct
+      ? `${batteryStatus.currentSOC_pct}% ${isCharging ? '(Charging)' : ''}`
+      : 'Unknown';
 
     const imageUrl = vehicleImages.filter(image => image.name === name)[0].src;
 
@@ -48,23 +50,27 @@ class VehicleDetail extends Component {
             <div className="vehicle-detail__row">
               <IconText
                 label="interior temperature"
-                value={vehicleInteriorTemperature}
+                value={`${vehicleInteriorTemperature} °C`}
               >
                 <TemperatureIcon />
               </IconText>
               <IconText
                 label="Battery Charge"
-                value={batteryStatus}
+                value={batteryInfo}
                 type="number"
               >
                 <Juice
-                  value={batteryChangeLevel}
-                  isCharging={batteryChargingStatus}
+                  value={batteryStatus.currentSOC_pct}
+                  isCharging={isCharging}
                 />
               </IconText>
             </div>
             <div className="vehicle-detail__row">
-              <IconText label="mileage" value={mileage} type="number">
+              <IconText
+                label="mileage"
+                value={`${odometer_km} km`}
+                type="number"
+              >
                 <MileageIcon />
               </IconText>
               <IconText label="vehicle Number" value={licensePlateNumber}>
