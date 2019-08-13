@@ -2,10 +2,14 @@
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
-  padding: $spacing-l;
+  padding: $spacing-m;
   animation: fade-in .5s;
   position: relative;
   overflow: hidden;
+
+  @include media('>=xlarge') {
+    padding: $spacing-l;
+  }
 }
 
 .vehicle-detail__content {
@@ -23,8 +27,12 @@
   color: var(--primary);
   font-size: 4rem;
   font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: -$spacing-s 0 $spacing-l;
+  margin: -$spacing-m 0 $spacing-l;
   transition: color $transition-time ease-in;
+
+  @include media('>=xlarge') {
+    margin-top: -$spacing-s;
+  }
 }
 
 .vehicle-detail__picture {
@@ -55,10 +63,6 @@
       color: $mercury;
       opacity: 0.07;
     }
-
-    //@include media('>=xlarge') {
-    //  font-size: 20rem;
-    //}
   }
 
   &::after {
@@ -97,7 +101,11 @@
 .vehicle-detail__row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: $spacing-l;
+  margin-bottom: $spacing-m;
+
+  @include media('>=xlarge') {
+    margin-bottom: $spacing-l;
+  }
 }
 
 .vehicle-detail__modal {

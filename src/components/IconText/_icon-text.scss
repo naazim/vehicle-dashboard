@@ -1,3 +1,6 @@
+$fl-icon-size-m: 60px;
+$fl-icon-size-l: 76px;
+
 .fl-icon-text {
   display: inline-flex;
   align-items: center;
@@ -28,9 +31,16 @@
 
 .fl-icon-text__img {
   margin-right: $spacing-m;
-  width: 94px;
+  width: $fl-icon-size-m;
+  height: $fl-icon-size-m;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  @include media('>=xlarge') {
+    width: $fl-icon-size-m;
+    height: $fl-icon-size-m;
+  }
 
   svg:not(.custom) {
     path {

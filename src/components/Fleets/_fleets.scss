@@ -1,4 +1,5 @@
-$fleet-btn-height: 96px;
+$fleet-btn-height-m: 80px;
+$fleet-btn-height-l: 96px;
 
 
 .fleets {
@@ -18,12 +19,16 @@ $fleet-btn-height: 96px;
   align-items: center;
   width: 100%;
   padding: 0 $spacing-m;
-  height: $fleet-btn-height;
+  height: $fleet-btn-height-m;
   border: none;
   text-align: left;
   color: var(--secondary);
   background-color: transparent;
   transition: color $transition-time ease-in, background-color $transition-time ease-in;
+
+  @include media('>=xlarge') {
+    height: $fleet-btn-height-l;
+  }
 
   &:hover, &focus {
     background-color: rgba(0, 0, 0, 0.3);
