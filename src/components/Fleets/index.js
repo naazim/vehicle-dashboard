@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Vehicle } from '../Vehicle';
+import { NavVehicle } from '../NavVehicle';
 
 const Fleets = ({
   data: fleets,
@@ -27,7 +27,7 @@ const Fleets = ({
           fleetVehicles
             .filter(vehicle => vehicle.fleetId === fleet.id)
             .map(vehicle => (
-              <Vehicle
+              <NavVehicle
                 key={vehicle.vehicleId}
                 vehicleData={vehicle}
                 onVehicleClick={onVehicleClick}

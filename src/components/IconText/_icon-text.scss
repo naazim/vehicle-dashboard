@@ -10,7 +10,7 @@
     .fl-icon-text__img {
       margin-left: $spacing-m;
       margin-right: 0;
-      text-align: right;
+      align-items: flex-end;
     }
   }
 }
@@ -29,6 +29,8 @@
 .fl-icon-text__img {
   margin-right: $spacing-m;
   width: 94px;
+  display: flex;
+  flex-direction: column;
 
   svg:not(.custom) {
     path {

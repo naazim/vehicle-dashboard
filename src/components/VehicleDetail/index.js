@@ -89,6 +89,12 @@ class VehicleDetail extends Component {
             </div>
             <div className="vehicle-detail__row">
               <IconText
+                label="interior temperature"
+                value={vehicleInteriorTemperature}
+              >
+                <TemperatureIcon />
+              </IconText>
+              <IconText
                 label="Battery Charge"
                 value={batteryStatus}
                 type="number"
@@ -97,12 +103,6 @@ class VehicleDetail extends Component {
                   value={batteryChangeLevel}
                   isCharging={batteryChargingStatus}
                 />
-              </IconText>
-              <IconText
-                label="interior temperature"
-                value={vehicleInteriorTemperature}
-              >
-                <TemperatureIcon />
               </IconText>
             </div>
             <div className="vehicle-detail__row">
@@ -147,7 +147,7 @@ class VehicleDetail extends Component {
             className={clsx('btn-icon btn-circle btn-circle__map', {
               'btn-circle__map--active': isMapVisible
             })}
-            onClick={this.showMap}
+            onClick={() => {}}
           >
             <InfoIcon />
           </button>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Vehicle = ({ vehicleData, onVehicleClick }) => {
+const NavVehicle = ({ vehicleData, onVehicleClick }) => {
   const { vehicleId, name, vehicleStatus } = vehicleData;
 
   return (
@@ -15,4 +15,4 @@ const Vehicle = ({ vehicleData, onVehicleClick }) => {
   );
 };
 
-export { Vehicle };
+export { NavVehicle };
