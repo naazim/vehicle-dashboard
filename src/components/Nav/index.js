@@ -18,6 +18,7 @@ class Nav extends Component {
     fetch(API_FLEETS_URL)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         this.setState({ fleets: data.fleets });
       })
       .catch(console.log);

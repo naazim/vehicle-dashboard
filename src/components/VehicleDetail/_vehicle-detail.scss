@@ -100,11 +100,17 @@
   margin-bottom: $spacing-l;
 }
 
-.vehicle-detail__info {
+.vehicle-detail__modal {
   color: var(--text-primary);
   transition: color .15s ease-in;
-  position: absolute;
-  top: 536px;
+  border-radius: 17px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 2px 74px 0 rgba(0, 0, 0, 0.41), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.vehicle-detail__overlay {
+  background: rgba(0, 0, 0, 0);
 }
 
 .vehicle-detail__footer {
@@ -132,8 +138,11 @@
 }
 
 .btn-circle__map {
-  box-shadow: -30px 2px 34px 0 rgba(0, 166, 255, 0.19), 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 12px 14px 0 rgba(4, 50, 84, 0.43), 6px -8px 24px 0 rgba(44, 209, 255, 0.35);
   transition: background-color $transition-time ease-in;
+
+  .theme-light & {
+    box-shadow: -30px 2px 34px 0 rgba(0, 166, 255, 0.19), 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 12px 14px 0 rgba(4, 50, 84, 0.43), 6px -8px 24px 0 rgba(44, 209, 255, 0.35);
+  }
 
   &--active {
     z-index: 1;
