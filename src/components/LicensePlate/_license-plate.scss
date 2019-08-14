@@ -13,6 +13,10 @@ $license-plate-border-radius-l: 8px;
   display: flex;
   align-items: center;
 
+  path {
+    fill: var(--primary);
+  }
+
   @include media('>=xlarge') {
     height: $license-plate-height-l;
     border-width: $license-plate-border-l;

@@ -1,0 +1,19 @@
+.fl-vehicle-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-l;
+  align-items: center;
+}
+
+.fl-vehicle-header__name {
+  color: var(--primary);
+  font-size: 3.5rem;
+  font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  transition: color $transition-time ease-in;
+
+  @include media('>=xlarge') {
+    font-size: 4rem;
+    margin-top: -$spacing-s;
+  }
+}
