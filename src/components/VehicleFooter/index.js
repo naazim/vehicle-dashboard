@@ -52,17 +52,20 @@ class VehicleFooter extends Component {
       vehicleStatus,
       name,
       vin,
+      batteryStatus,
       licensePlateNumber,
       make,
       model,
       mileage,
-      fuellevel,
-      batteryChangeLevel,
       vehicleLockStatus,
       vehicleInteriorTemperature,
-      batteryChargingStatus,
-      fleetId
+      fleetId,
+      userId,
+      odometer_km
     } = this.props.vehicleData;
+
+    const batteryStatusValue =
+      (!!batteryStatus && batteryStatus.currentSOC_pct) || 'unknown';
 
     return (
       <>
@@ -92,19 +95,35 @@ class VehicleFooter extends Component {
           onClose={this.onCloseModal}
           center
           classNames={{
-            overlay: 'vehicle-detail__overlay',
-            modal: 'vehicle-detail__modal'
+            overlay: 'fl-modal__overlay',
+            modal: 'fl-modal',
+            closeIcon: 'fl-modal__close-icon',
+            closeButton: 'fl-modal__close-btn'
           }}
+          closeIconSvgPath={
+            <>
+              <path d="M.005 26.794L26.875.567l1.12 1.093-26.87 26.227z" />
+              <path d="M1.125.567l26.87 26.227-1.12 1.093L.005 1.66z" />
+            </>
+          }
         >
-          <div>vehicleId: {vehicleId}</div>
-          <div>vehicleStatus: {vehicleStatus}</div>
-          <div>vin: {vin}</div>
-          <div>make: {make}</div>
-          <div>model: {model}</div>
-          <div>mileage: {mileage}</div>
-          <div>vehicleInteriorTemperature: {vehicleInteriorTemperature}</div>
-          <div>fleetId: {fleetId}</div>
-          <div>fuellevel: {fuellevel}</div>
+          <h4 className="fl-modal__title">Information</h4>
+          <dl>
+            <dt>name:</dt> <dd>{name}</dd>
+            <dt>license Plate Number:</dt> <dd>{licensePlateNumber}</dd>
+            <dt>vehicleId:</dt> <dd>{vehicleId}</dd>
+            <dt>vehicleStatus:</dt> <dd>{vehicleStatus}</dd>
+            <dt>VIN:</dt> <dd>{vin}</dd>
+            <dt>make:</dt> <dd>{make}</dd>
+            <dt>model:</dt> <dd>{model}</dd>
+            <dt>vehicle Lock Status:</dt> <dd>{vehicleLockStatus}</dd>
+            <dt>vehicleInteriorTemperature:</dt>{' '}
+            <dd>{vehicleInteriorTemperature}</dd>
+            <dt>battery status:</dt> <dd>{batteryStatusValue}</dd>
+            <dt>mileage:</dt> <dd>{odometer_km}</dd>
+            <dt>fleetId:</dt> <dd>{fleetId}</dd>
+            <dt>userId:</dt> <dd>{userId}</dd>
+          </dl>
         </Modal>
 
         <Map
@@ -120,3 +139,36 @@ class VehicleFooter extends Component {
 }
 
 export { VehicleFooter };
+
+/*
+{
+    "chargingStatus": {
+    "carCapturedTimestamp": "2019-08-13T13:29:09Z",
+        "remainingChargingTimeToComplete_min": "-1",
+        "chargingState": "off"
+},
+    "plugStatus": {
+    "carCapturedTimestamp": "2019-08-13T13:29:09Z",
+        "plugConnectionState": "disconnected",
+        "plugLockState": "unlocked"
+},
+    "batteryStatus": {
+    "carCapturedTimestamp": "2019-08-13T13:29:09Z",
+        "currentSOC_pct": "15",
+        "cruisingRangeElectric_km": "53"
+},
+    "climatisationStatus": {
+    "remainingClimatisationTime_min": "10",
+        "climatisationState": "off"
+},
+    "windowHeatingStatus": [
+    {
+        "windowLocation": "front",
+        "windowHeatingState": "off"
+    },
+    {
+        "windowLocation": "rear",
+        "windowHeatingState": "off"
+    }
+],
+}*/
