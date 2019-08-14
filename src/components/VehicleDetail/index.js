@@ -24,11 +24,16 @@ class VehicleDetail extends Component {
       vehicleInteriorTemperature
     } = this.props.vehicleData;
 
-    const isCharging = chargingStatus.chargingState === 'on';
+    const isCharging =
+      (!!chargingStatus && chargingStatus.chargingState === 'on') || false;
 
-    const batteryInfo = batteryStatus.currentSOC_pct
-      ? `${batteryStatus.currentSOC_pct}% ${isCharging ? '(Charging)' : ''}`
-      : 'Unknown';
+    const batteryInfo =
+      !!batteryStatus && batteryStatus.currentSOC_pct
+        ? `${batteryStatus.currentSOC_pct}% ${isCharging ? '(Charging)' : ''}`
+        : 'Unknown';
+
+    const batteryValue =
+      (batteryStatus && batteryStatus.currentSOC_pct) || 'Unknown';
 
     const imageUrl =
       vehicleImages.filter(image => image.name === name)[0].src ||
@@ -63,10 +68,7 @@ class VehicleDetail extends Component {
                 value={batteryInfo}
                 type="number"
               >
-                <Juice
-                  value={batteryStatus.currentSOC_pct}
-                  isCharging={isCharging}
-                />
+                <Juice value={batteryValue} isCharging={isCharging} />
               </IconText>
             </div>
           </div>

@@ -7,7 +7,7 @@ import { ReactComponent as InfoIcon } from '../../assets/info.svg';
 
 class VehicleFooter extends Component {
   state = {
-    open: false,
+    isModalOpen: false,
     isMapVisible: false,
     location: { lat: '52.5200', lng: '13.4050' }
   };
@@ -32,11 +32,11 @@ class VehicleFooter extends Component {
   }
 
   onOpenModal = () => {
-    this.setState({ open: true });
+    this.setState({ isModalOpen: true });
   };
 
   onCloseModal = () => {
-    this.setState({ open: false });
+    this.setState({ isModalOpen: false });
   };
 
   toggleMapVisibility = () => {
@@ -46,7 +46,7 @@ class VehicleFooter extends Component {
   };
 
   render() {
-    const { isMapVisible, location, open } = this.state;
+    const { isMapVisible, location, isModalOpen } = this.state;
     const {
       vehicleId,
       vehicleStatus,
@@ -88,7 +88,7 @@ class VehicleFooter extends Component {
         </footer>
 
         <Modal
-          open={open}
+          open={isModalOpen}
           onClose={this.onCloseModal}
           center
           classNames={{
