@@ -3,6 +3,7 @@ import { Juice } from '../Juice';
 import { IconText } from '../IconText';
 import { ScrambleAnimate } from '../ScrambleAnimate';
 import { VehicleFooter } from '../VehicleFooter';
+import { LicensePlate } from '../LicensePlate';
 import { ReactComponent as LockIcon } from '../../assets/locked.svg';
 import { ReactComponent as UnlockIcon } from '../../assets/unlocked.svg';
 import { ReactComponent as PlateIcon } from '../../assets/plate.svg';
@@ -39,10 +40,13 @@ class VehicleDetail extends Component {
 
     return (
       <div className="vehicle-detail">
-        <div className="vehicle-detail__content">
+        <div className="vehicle-detail__header">
           <h1 className="vehicle-detail__name">
             <ScrambleAnimate string={name} />
           </h1>
+          <LicensePlate text={licensePlateNumber} />
+        </div>
+        <div className="vehicle-detail__content">
           <div className="vehicle-detail__data">
             <div className="vehicle-detail__row">
               <IconText label="vehicle Lock Status" value={vehicleLockStatus}>

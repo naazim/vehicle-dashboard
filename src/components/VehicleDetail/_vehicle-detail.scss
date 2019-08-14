@@ -12,6 +12,13 @@
   }
 }
 
+.vehicle-detail__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-l;
+  align-items: center;
+}
+
 .vehicle-detail__content {
   display: flex;
   flex-direction: column;
@@ -27,12 +34,12 @@
   color: var(--primary);
   font-size: 3.5rem;
   font-family: 'VW bold', -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: -$spacing-m 0 $spacing-m;
+  margin: 0;
   transition: color $transition-time ease-in;
 
   @include media('>=xlarge') {
     font-size: 4rem;
-    margin: -$spacing-s 0 $spacing-l;
+    margin-top: -$spacing-s;
   }
 }
 

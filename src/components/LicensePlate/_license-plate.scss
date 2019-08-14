@@ -1,0 +1,40 @@
+$license-plate-height-m: 52px;
+$license-plate-height-l: 60px;
+$license-plate-border-m: 3px;
+$license-plate-border-l: 4px;
+$license-plate-border-radius-m: 6px;
+$license-plate-border-radius-l: 8px;
+
+.fl-license-plate {
+  color: var(--primary);
+  height: $license-plate-height-m;
+  border: $license-plate-border-m solid currentColor;
+  border-radius: $license-plate-border-radius-m;
+  display: flex;
+  align-items: center;
+
+  @include media('>=xlarge') {
+    height: $license-plate-height-l;
+    border-width: $license-plate-border-l;
+    border-radius: $license-plate-border-radius-l;
+    border-radius: $license-plate-border-radius-l;
+  }
+}
+
+.fl-license-plate__icon {
+  height: calc(100% + #{$license-plate-border-m}*2);
+  margin: -$license-plate-border-m;
+}
+
+.fl-license-plate__text {
+  padding: 0 $spacing-s;
+  font-weight: bold;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+
+  @include media('>=xlarge') {
+    padding: 0 $spacing-m;
+    font-size: 1.4rem;
+  }
+}
