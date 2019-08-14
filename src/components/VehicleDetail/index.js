@@ -78,7 +78,7 @@ class VehicleDetail extends Component {
               >
                 <MileageIcon />
               </IconText>
-              <IconText label="vehicle Number" value={licensePlateNumber}>
+              <IconText label="License Plate" value={licensePlateNumber}>
                 <PlateIcon />
               </IconText>
             </div>
