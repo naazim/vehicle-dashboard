@@ -11,6 +11,9 @@ import { ReactComponent as MileageIcon } from '../../assets/mileage.svg';
 import { ReactComponent as TemperatureIcon } from '../../assets/temperature.svg';
 import { vehicleImages } from '../../helpers/vehicle-images';
 
+const defaultCarImage =
+  'https://dl.dropboxusercontent.com/s/6udxa1n4lb46axp/car-empty.webp';
+
 class VehicleDetail extends Component {
   render() {
     const {
@@ -30,7 +33,9 @@ class VehicleDetail extends Component {
       ? `${batteryStatus.currentSOC_pct}% ${isCharging ? '(Charging)' : ''}`
       : 'Unknown';
 
-    const imageUrl = vehicleImages.filter(image => image.name === name)[0].src;
+    const imageUrl =
+      vehicleImages.filter(image => image.name === name)[0].src ||
+      defaultCarImage;
 
     return (
       <div className="vehicle-detail">
