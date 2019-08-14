@@ -5,8 +5,6 @@ import { VehicleHeader } from '../VehicleHeader';
 import { VehicleFooter } from '../VehicleFooter';
 import { ReactComponent as LockIcon } from '../../assets/locked.svg';
 import { ReactComponent as UnlockIcon } from '../../assets/unlocked.svg';
-import { ReactComponent as PlateIcon } from '../../assets/plate.svg';
-import { ReactComponent as StatusIcon } from '../../assets/status.svg';
 import { ReactComponent as MileageIcon } from '../../assets/mileage.svg';
 import { ReactComponent as TemperatureIcon } from '../../assets/temperature.svg';
 import { vehicleImages } from '../../helpers/vehicle-images';
@@ -17,7 +15,6 @@ const defaultCarImage =
 class VehicleDetail extends Component {
   render() {
     const {
-      vehicleStatus,
       name,
       licensePlateNumber,
       odometer_km,
@@ -46,8 +43,12 @@ class VehicleDetail extends Component {
               <IconText label="vehicle Lock Status" value={vehicleLockStatus}>
                 {vehicleLockStatus === 'locked' ? <LockIcon /> : <UnlockIcon />}
               </IconText>
-              <IconText label="vehicle Status" value={vehicleStatus}>
-                <StatusIcon />
+              <IconText
+                label="mileage"
+                value={`${odometer_km} km`}
+                type="number"
+              >
+                <MileageIcon />
               </IconText>
             </div>
             <div className="vehicle-detail__row">
@@ -66,18 +67,6 @@ class VehicleDetail extends Component {
                   value={batteryStatus.currentSOC_pct}
                   isCharging={isCharging}
                 />
-              </IconText>
-            </div>
-            <div className="vehicle-detail__row">
-              <IconText
-                label="mileage"
-                value={`${odometer_km} km`}
-                type="number"
-              >
-                <MileageIcon />
-              </IconText>
-              <IconText label="License Plate" value={licensePlateNumber}>
-                <PlateIcon />
               </IconText>
             </div>
           </div>
