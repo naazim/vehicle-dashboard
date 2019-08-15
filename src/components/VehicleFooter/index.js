@@ -10,7 +10,8 @@ class VehicleFooter extends Component {
   state = {
     isMapVisible: false,
     location: { lat: '52.5200', lng: '13.4050' },
-    isLocked: !!this.props.vehicleData.vehicleLockStatus
+    isLocked: !!this.props.vehicleData.vehicleLockStatus,
+    isLockPressed: false
   };
 
   componentDidUpdate(prevProps) {
@@ -40,12 +41,17 @@ class VehicleFooter extends Component {
 
   toggleLock = () => {
     this.setState(() => ({
-      isLocked: !this.state.isLocked
+      isLockPressed: !this.state.isLockPressed
     }));
+    setTimeout(() => {
+      this.setState(() => ({
+        isLocked: !this.state.isLocked
+      }));
+    }, 10000);
   };
 
   render() {
-    const { isMapVisible, location, isLocked } = this.state;
+    const { isMapVisible, location, isLocked, isLockPressed } = this.state;
 
     return (
       <>
@@ -61,7 +67,9 @@ class VehicleFooter extends Component {
           </button>
           <button
             type="button"
-            className={clsx('btn-icon btn-circle btn-circle__lockToggle')}
+            className={clsx('btn-icon btn-circle btn-circle__lockToggle', {
+              'btn-circle__lockToggle--active': isLockPressed
+            })}
             onClick={this.toggleLock}
           >
             {!!isLocked ? <LockIcon /> : <UnlockIcon />}

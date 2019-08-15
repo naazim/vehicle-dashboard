@@ -45,7 +45,22 @@
 }
 
 .btn-circle__lockToggle {
+  transform: scale(1.5);
+  transition: background-color 0.5s ease-in, transform 0.5s ease-in;
+  border: 1px solid transparent;
+
+  &:hover, &:focus {
+    background-color: transparent;
+    border-color: var(--primary);
+
+    path {
+      fill: var(--primary);
+    }
+  }
+
   svg {
     width: 22px;
   }
 }
+
+
