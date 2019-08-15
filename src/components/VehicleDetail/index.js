@@ -13,6 +13,15 @@ const defaultCarImage =
   'https://dl.dropboxusercontent.com/s/6udxa1n4lb46axp/car-empty.webp';
 
 class VehicleDetail extends Component {
+  state = {
+    lockStatus: this.props.vehicleData.vehicleLockStatus
+  };
+
+  setLockStatus = () => {
+    this.setState(() => ({
+      lockStatus: !this.state.lockStatus
+    }));
+  };
   render() {
     const {
       name,
@@ -39,6 +48,8 @@ class VehicleDetail extends Component {
       vehicleImages.filter(image => image.name === name)[0].src ||
       defaultCarImage;
 
+    const { lockStatus } = this.state;
+
     return (
       <div className="vehicle-detail">
         <VehicleHeader name={name} licensePlateNumber={licensePlateNumber} />
@@ -46,8 +57,11 @@ class VehicleDetail extends Component {
         <div className="vehicle-detail__content">
           <div className="vehicle-detail__data">
             <div className="vehicle-detail__row">
-              <IconText label="vehicle Lock Status" value={vehicleLockStatus}>
-                {vehicleLockStatus === 'locked' ? <LockIcon /> : <UnlockIcon />}
+              <IconText
+                label="vehicle Lock Status"
+                value={!!lockStatus ? 'Locked' : 'unlocked'}
+              >
+                {!!lockStatus ? <LockIcon /> : <UnlockIcon />}
               </IconText>
               <IconText
                 label="mileage"
@@ -79,7 +93,10 @@ class VehicleDetail extends Component {
           </div>
         </div>
 
-        <VehicleFooter vehicleData={this.props.vehicleData} />
+        <VehicleFooter
+          vehicleData={this.props.vehicleData}
+          setLockStatus={this.setLockStatus}
+        />
       </div>
     );
   }
