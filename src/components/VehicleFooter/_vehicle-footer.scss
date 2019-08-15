@@ -1,3 +1,5 @@
+$progress-width: 12px;
+
 .vehicle-detail__footer {
   height: $btn-height;
   display: flex;
@@ -48,19 +50,48 @@
   transform: scale(1.5);
   transition: background-color 0.5s ease-in, transform 0.5s ease-in;
   border: 1px solid transparent;
+  position: relative;
 
-  &:hover, &:focus {
+  &:hover {
     background-color: transparent;
     border-color: var(--primary);
 
-    path {
+    .btn-circle__lockToggle-icon path {
       fill: var(--primary);
     }
   }
+}
 
-  svg {
-    width: 22px;
+.btn-circle__lockToggle--inactive {
+  animation: pulse 1s;
+
+  .theme-dark & {
+    animation: pulse-dark 1s;
   }
 }
 
+.btn-circle__lockToggle-icon {
+  width: 22px;
+  animation: bounce 0.25s 2 linear alternate;
+}
 
+.btn-circle__circle-icon{
+  position: absolute;
+  transform: scale(1.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-circle__svg-circle {
+  fill: transparent;
+  stroke: var(--primary);
+  stroke-width: $progress-width;
+  stroke-dasharray: 534;
+  transition: stroke-dashoffset 1s;
+  stroke-dashoffset: 0;
+  animation: drawCircle 2s;
+  -webkit-animation-play-state: running;
+  -moz-transform: rotate(-89deg) translateX(-190px); /* firefox bug fix - won't rotate at 90deg angles */
+}

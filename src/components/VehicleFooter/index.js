@@ -5,6 +5,7 @@ import { Map } from '../Map';
 import { ReactComponent as GpsIcon } from '../../assets/gps.svg';
 import { ReactComponent as LockIcon } from '../../assets/locked-small.svg';
 import { ReactComponent as UnlockIcon } from '../../assets/unlocked-small.svg';
+import { ReactComponent as CircleIcon } from '../../assets/circle.svg';
 
 class VehicleFooter extends Component {
   state = {
@@ -45,9 +46,10 @@ class VehicleFooter extends Component {
     }));
     setTimeout(() => {
       this.setState(() => ({
-        isLocked: !this.state.isLocked
+        isLocked: !this.state.isLocked,
+        isLockPressed: !this.state.isLockPressed
       }));
-    }, 10000);
+    }, 2000);
   };
 
   render() {
@@ -68,11 +70,19 @@ class VehicleFooter extends Component {
           <button
             type="button"
             className={clsx('btn-icon btn-circle btn-circle__lockToggle', {
-              'btn-circle__lockToggle--active': isLockPressed
+              'btn-circle__lockToggle--active': isLockPressed,
+              'btn-circle__lockToggle--inactive': !isLockPressed
             })}
             onClick={this.toggleLock}
           >
-            {!!isLocked ? <LockIcon /> : <UnlockIcon />}
+            {!!isLocked ? (
+              <LockIcon className="btn-circle__lockToggle-icon" />
+            ) : (
+              <UnlockIcon className="btn-circle__lockToggle-icon" />
+            )}
+            {isLockPressed && (
+              <CircleIcon className="btn-circle__circle-icon" />
+            )}
           </button>
 
           <ModalWrapper data={this.props.vehicleData} />

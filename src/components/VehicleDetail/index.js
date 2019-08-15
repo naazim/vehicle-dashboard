@@ -42,6 +42,7 @@ class VehicleDetail extends Component {
     return (
       <div className="vehicle-detail">
         <VehicleHeader name={name} licensePlateNumber={licensePlateNumber} />
+
         <div className="vehicle-detail__content">
           <div className="vehicle-detail__data">
             <div className="vehicle-detail__row">
@@ -76,9 +77,9 @@ class VehicleDetail extends Component {
           <div className="vehicle-detail__picture" data-title={name}>
             <img className="vehicle-detail__image" src={imageUrl} alt={name} />
           </div>
-
-          <VehicleFooter vehicleData={this.props.vehicleData} />
         </div>
+
+        <VehicleFooter vehicleData={this.props.vehicleData} />
       </div>
     );
   }
