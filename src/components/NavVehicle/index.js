@@ -10,7 +10,7 @@ const NavVehicle = ({ vehicleData, onVehicleClick }) => {
       onClick={() => onVehicleClick(vehicleId)}
     >
       <div className="fl-vehicle__name">{name}</div>
-      <div className="fl-vehicle__status">Status: {vehicleStatus}</div>
+      <div className="fl-vehicle__status">Rental Status: {vehicleStatus}</div>
     </button>
   );
 };

@@ -6,7 +6,7 @@ import { VehicleFooter } from '../VehicleFooter';
 import { ReactComponent as LockIcon } from '../../assets/locked.svg';
 import { ReactComponent as UnlockIcon } from '../../assets/unlocked.svg';
 import { ReactComponent as MileageIcon } from '../../assets/mileage.svg';
-import { ReactComponent as TemperatureIcon } from '../../assets/temperature.svg';
+import { ReactComponent as StatusIcon } from '../../assets/status.svg';
 import { vehicleImages } from '../../helpers/vehicle-images';
 
 const defaultCarImage =
@@ -30,7 +30,7 @@ class VehicleDetail extends Component {
       odometer_km,
       batteryStatus,
       chargingStatus,
-      vehicleInteriorTemperature
+      vehicleStatus
     } = this.props.vehicleData;
 
     const isCharging =
@@ -63,20 +63,17 @@ class VehicleDetail extends Component {
               >
                 {!!lockStatus ? <LockIcon /> : <UnlockIcon />}
               </IconText>
+              <IconText label="vehicle Status" value={vehicleStatus}>
+                <StatusIcon />
+              </IconText>
+            </div>
+            <div className="vehicle-detail__row">
               <IconText
                 label="mileage"
                 value={`${odometer_km} km`}
                 type="number"
               >
                 <MileageIcon />
-              </IconText>
-            </div>
-            <div className="vehicle-detail__row">
-              <IconText
-                label="interior temperature"
-                value={`${vehicleInteriorTemperature} °C`}
-              >
-                <TemperatureIcon />
               </IconText>
               <IconText
                 label="Battery Charge"
