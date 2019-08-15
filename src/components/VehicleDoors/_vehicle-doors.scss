@@ -3,3 +3,10 @@
   height: 100%;
   margin-left: $spacing-m;
 }
+
+.fl-vehicle-doors__left, .fl-vehicle-doors__right {
+  transition: opacity $transition-time ease-in;
+}
+.fl-vehicle-doors__left--closed, .fl-vehicle-doors__right--closed {
+  opacity: 0;
+}
