@@ -4,6 +4,7 @@ import { setTheme } from '../../helpers/setTheme';
 import { Header } from '../../components/Header';
 import { Nav } from '../../components/Nav';
 import { VehicleDetail } from '../../components/VehicleDetail';
+import { ReactComponent as PreoaderIcon } from '../../assets/preloader.svg';
 
 class Home extends Component {
   constructor() {
@@ -11,7 +12,8 @@ class Home extends Component {
 
     this.state = {
       vehicleData: null,
-      theme: 'dark'
+      theme: 'dark',
+      isLoading: false
     };
   }
 
@@ -20,9 +22,16 @@ class Home extends Component {
   }
 
   onVehicleClick = data => {
-    this.setState(() => ({
-      vehicleData: data
-    }));
+    if (!data) {
+      this.setState(() => ({
+        isLoading: true
+      }));
+    } else {
+      this.setState(() => ({
+        vehicleData: data,
+        isLoading: false
+      }));
+    }
   };
 
   toggleTheme = () => {
@@ -38,14 +47,21 @@ class Home extends Component {
   };
 
   render() {
-    const { vehicleData, theme } = this.state;
+    const { vehicleData, theme, isLoading } = this.state;
 
     return (
       <div className={clsx('fl-container', `theme-${theme}`)}>
         <Nav onVehicleClick={this.onVehicleClick} />
         <div className="fl-content">
           <Header toggleTheme={this.toggleTheme} currentTheme={theme} />
-          {vehicleData && <VehicleDetail vehicleData={vehicleData} />}
+          {isLoading && (
+            <div className="preloader">
+              <PreoaderIcon className="preloader__spinner" />
+            </div>
+          )}
+          {vehicleData && (
+            <VehicleDetail vehicleData={vehicleData} isLoading={isLoading} />
+          )}
         </div>
       </div>
     );

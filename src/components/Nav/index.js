@@ -37,6 +37,7 @@ class Nav extends Component {
 
   onVehicleClick = vehicleId => {
     const API_VEHICLE_URL = `/vehicle/${vehicleId}`;
+    this.props.onVehicleClick(false);
 
     fetch(API_VEHICLE_URL)
       .then(res => res.json())

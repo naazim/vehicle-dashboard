@@ -37,3 +37,41 @@ img {
   width: 100%;
   height: auto;
 }
+
+.preloader {
+  display: flex;
+  flex: 1 0 0;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: $header-height-m;
+  left: $nav-panel-width;
+  z-index: 99999;
+}
+
+.preloader__spinner {
+  $preloader-color-light: rgba(255, 255, 255, 0.4);
+  $preloader-color-dark: rgba(0, 31, 82, 0.4);
+  width: 160px;
+  height: 160px;
+
+  .stop {
+    stop-color: $preloader-color-light;
+
+    .theme-dark & {
+      stop-color: $preloader-color-dark;
+    }
+  }
+
+  circle {
+    fill: $preloader-color-light;
+
+    .theme-dark & {
+      fill: $preloader-color-dark;
+    }
+  }
+
+
+}
