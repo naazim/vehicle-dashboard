@@ -4,9 +4,42 @@
   margin-left: $spacing-m;
 }
 
-.fl-vehicle-doors__left, .fl-vehicle-doors__right {
-  transition: opacity $transition-time ease-in;
+.fl-vehicle-doors__rear-left, .fl-vehicle-doors__rear-right, .fl-vehicle-doors__front-left, .fl-vehicle-doors__front-right {
+  transition: opacity $transition-time ease-in $transition-time/2, transform $transition-time ease-in;
+
+  &--closed {
+    opacity: 0;
+  }
 }
-.fl-vehicle-doors__left--closed, .fl-vehicle-doors__right--closed {
-  opacity: 0;
+
+.fl-vehicle-doors__front-left {
+  transform-origin: 72px 170px;
+
+  &--closed {
+    transform: rotate(-60deg);
+  }
+}
+
+.fl-vehicle-doors__rear-left {
+  transform-origin: 70px 242px;
+
+  &--closed {
+    transform: rotate(-60deg);
+  }
+}
+
+.fl-vehicle-doors__front-right {
+  transform-origin: 190px 170px;
+
+  &--closed {
+    transform: rotate(60deg);
+  }
+}
+
+.fl-vehicle-doors__rear-right {
+  transform-origin: 191px 242px;
+
+  &--closed {
+    transform: rotate(60deg);
+  }
 }

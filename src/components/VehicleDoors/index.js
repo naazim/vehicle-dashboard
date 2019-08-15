@@ -41,29 +41,29 @@ export class VehicleDoors extends Component {
           />
           <path
             className={clsx(
-              'fl-vehicle-doors__right',
-              `fl-vehicle-doors__right--${frontRight}`
+              'fl-vehicle-doors__front-right',
+              `fl-vehicle-doors__front-right--${frontRight}`
             )}
             d="M236.606 191.13a1.5 1.5 0 0 1 .548 2.048l-2.622 4.547-.003.006a1.5 1.5 0 0 1-2.052.54l-45.523-26.55a1.5 1.5 0 0 1-.736-1.458l.6-5.502a1.5 1.5 0 0 1 2.242-1.136l47.546 27.505z"
           />
           <path
             className={clsx(
-              'fl-vehicle-doors__right',
-              `fl-vehicle-doors__right--${rearRight}`
+              'fl-vehicle-doors__rear-right',
+              `fl-vehicle-doors__rear-right--${rearRight}`
             )}
             d="M233.476 272.635l.014.008a1.5 1.5 0 0 0 2.048-.55l2.616-4.536a1.5 1.5 0 0 0-.548-2.048l-47.726-27.61a1.5 1.5 0 0 0-2.229 1.04l-.87 4.955a1.5 1.5 0 0 0 .714 1.55l45.98 27.19z"
           />
           <path
             className={clsx(
-              'fl-vehicle-doors__left',
-              `fl-vehicle-doors__left--${frontLeft}`
+              'fl-vehicle-doors__front-left',
+              `fl-vehicle-doors__front-left--${frontLeft}`
             )}
             d="M24.993 191.288a1.5 1.5 0 0 0-.548 2.048l2.622 4.547.003.006a1.5 1.5 0 0 0 2.052.54l45.523-26.55a1.5 1.5 0 0 0 .736-1.458l-.6-5.502a1.5 1.5 0 0 0-2.242-1.136l-47.546 27.505z"
           />
           <path
             className={clsx(
-              'fl-vehicle-doors__left',
-              `fl-vehicle-doors__left--${frontLeft}`
+              'fl-vehicle-doors__rear-left',
+              `fl-vehicle-doors__rear-left--${rearLeft}`
             )}
             d="M28.633 272.793l-.014.008a1.5 1.5 0 0 1-2.049-.55l-2.616-4.536a1.5 1.5 0 0 1 .549-2.048l47.726-27.61a1.5 1.5 0 0 1 2.229 1.04l.87 4.955a1.5 1.5 0 0 1-.714 1.55l-45.98 27.19z"
           />
