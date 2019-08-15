@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-responsive-modal';
 import clsx from 'clsx';
+import { VehicleDoors } from '../VehicleDoors';
 import { ReactComponent as InfoIcon } from '../../assets/info.svg';
 
 export class ModalWrapper extends Component {
@@ -64,22 +65,25 @@ export class ModalWrapper extends Component {
           }
         >
           <h4 className="fl-modal__title">Information</h4>
-          <dl className="fl-modal__info">
-            <dt>name:</dt> <dd>{name}</dd>
-            <dt>license Plate Number:</dt> <dd>{licensePlateNumber}</dd>
-            <dt>vehicleId:</dt> <dd>{vehicleId}</dd>
-            <dt>vehicleStatus:</dt> <dd>{vehicleStatus}</dd>
-            <dt>VIN:</dt> <dd>{vin}</dd>
-            <dt>make:</dt> <dd>{make}</dd>
-            <dt>model:</dt> <dd>{model}</dd>
-            <dt>vehicle Lock Status:</dt> <dd>{vehicleLockStatus}</dd>
-            <dt>vehicleInteriorTemperature:</dt>{' '}
-            <dd>{vehicleInteriorTemperature}</dd>
-            <dt>battery status:</dt> <dd>{batteryStatusValue}</dd>
-            <dt>mileage:</dt> <dd>{odometer_km}</dd>
-            <dt>fleetId:</dt> <dd>{fleetId}</dd>
-            <dt>userId:</dt> <dd>{userId}</dd>
-          </dl>
+          <div className="fl-modal__content">
+            <dl className="fl-modal__info">
+              <dt>name:</dt> <dd>{name}</dd>
+              <dt>license Plate Number:</dt> <dd>{licensePlateNumber}</dd>
+              <dt>vehicleId:</dt> <dd>{vehicleId}</dd>
+              <dt>vehicleStatus:</dt> <dd>{vehicleStatus}</dd>
+              <dt>VIN:</dt> <dd>{vin}</dd>
+              <dt>make:</dt> <dd>{make}</dd>
+              <dt>model:</dt> <dd>{model}</dd>
+              <dt>vehicle Lock Status:</dt> <dd>{vehicleLockStatus}</dd>
+              <dt>vehicleInteriorTemperature:</dt>{' '}
+              <dd>{vehicleInteriorTemperature}</dd>
+              <dt>battery status:</dt> <dd>{batteryStatusValue}</dd>
+              <dt>mileage:</dt> <dd>{odometer_km}</dd>
+              <dt>fleetId:</dt> <dd>{fleetId}</dd>
+              <dt>userId:</dt> <dd>{userId}</dd>
+            </dl>
+            <VehicleDoors vehicleId={vehicleId} />
+          </div>
         </Modal>
       </>
     );

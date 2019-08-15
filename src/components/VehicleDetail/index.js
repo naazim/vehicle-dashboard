@@ -22,6 +22,7 @@ class VehicleDetail extends Component {
       lockStatus: !this.state.lockStatus
     }));
   };
+
   render() {
     const {
       name,
@@ -29,7 +30,6 @@ class VehicleDetail extends Component {
       odometer_km,
       batteryStatus,
       chargingStatus,
-      vehicleLockStatus,
       vehicleInteriorTemperature
     } = this.props.vehicleData;
 

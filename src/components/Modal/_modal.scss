@@ -5,15 +5,18 @@
   transition: color .15s ease-in;
   border-radius: 17px;
   box-shadow: 0 2px 74px 0 rgba(0, 0, 0, 0.41), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 800px;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 80%;
   padding: $spacing-l;
   text-transform: capitalize;
 }
 
 .fl-modal__overlay {
   background: rgba(0, 0, 0, 0);
-  left: $nav-panel-width;
+
+  @include media('>=xlarge') {
+    left: $nav-panel-width;
+  }
 }
 
 .fl-modal__close-btn {
@@ -32,13 +35,19 @@
   font-size: 1.5rem;
 }
 
+.fl-modal__content {
+  display: flex;
+}
+
 .fl-modal__info {
   display: grid;
   grid-template-columns: auto auto;
+  margin: 0;
 }
 
 .fl-modal__info dd {
-  margin: 0
+  margin: 0;
+  text-align: right;
 }
 
 .btn-circle__info--active {
