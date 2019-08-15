@@ -43,3 +43,9 @@
     transition: background-color $transition-time ease-in;
   }
 }
+
+.btn-circle__lockToggle {
+  svg {
+    width: 22px;
+  }
+}

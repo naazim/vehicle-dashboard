@@ -3,11 +3,14 @@ import { ModalWrapper } from '../Modal';
 import clsx from 'clsx';
 import { Map } from '../Map';
 import { ReactComponent as GpsIcon } from '../../assets/gps.svg';
+import { ReactComponent as LockIcon } from '../../assets/locked-small.svg';
+import { ReactComponent as UnlockIcon } from '../../assets/unlocked-small.svg';
 
 class VehicleFooter extends Component {
   state = {
     isMapVisible: false,
-    location: { lat: '52.5200', lng: '13.4050' }
+    location: { lat: '52.5200', lng: '13.4050' },
+    isLocked: !!this.props.vehicleData.vehicleLockStatus
   };
 
   componentDidUpdate(prevProps) {
@@ -35,8 +38,14 @@ class VehicleFooter extends Component {
     }));
   };
 
+  toggleLock = () => {
+    this.setState(() => ({
+      isLocked: !this.state.isLocked
+    }));
+  };
+
   render() {
-    const { isMapVisible, location } = this.state;
+    const { isMapVisible, location, isLocked } = this.state;
 
     return (
       <>
@@ -50,6 +59,14 @@ class VehicleFooter extends Component {
           >
             <GpsIcon />
           </button>
+          <button
+            type="button"
+            className={clsx('btn-icon btn-circle btn-circle__lockToggle')}
+            onClick={this.toggleLock}
+          >
+            {!!isLocked ? <LockIcon /> : <UnlockIcon />}
+          </button>
+
           <ModalWrapper data={this.props.vehicleData} />
         </footer>
 
