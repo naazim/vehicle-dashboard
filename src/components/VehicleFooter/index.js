@@ -94,7 +94,7 @@ class VehicleFooter extends Component {
             'vehicle-detail__map--active': isMapVisible
           })}
           center={location}
-          theme="normal.night.grey"
+          theme="normal.day"
         />
       </>
     );
