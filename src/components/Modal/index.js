@@ -64,7 +64,7 @@ export class ModalWrapper extends Component {
           }
         >
           <h4 className="fl-modal__title">Information</h4>
-          <dl>
+          <dl className="fl-modal__info">
             <dt>name:</dt> <dd>{name}</dd>
             <dt>license Plate Number:</dt> <dd>{licensePlateNumber}</dd>
             <dt>vehicleId:</dt> <dd>{vehicleId}</dd>

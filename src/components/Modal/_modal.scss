@@ -32,12 +32,12 @@
   font-size: 1.5rem;
 }
 
-dl {
+.fl-modal__info {
   display: grid;
   grid-template-columns: auto auto;
 }
 
-dd {
+.fl-modal__info dd {
   margin: 0
 }
 

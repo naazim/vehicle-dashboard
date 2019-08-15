@@ -50,7 +50,7 @@ class VehicleFooter extends Component {
         isLockPressed: !this.state.isLockPressed
       }));
       this.props.setLockStatus();
-    }, 2000);
+    }, 3000);
   };
 
   render() {

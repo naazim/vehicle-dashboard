@@ -48,17 +48,17 @@ $progress-width: 12px;
 
 .btn-circle__lockToggle {
   transform: scale(1.5);
-  transition: background-color 0.5s ease-in, transform 0.5s ease-in;
+  transition: background-color 0.25s ease-in, transform 0.5s ease-in;
   border: 1px solid transparent;
   position: relative;
+}
 
-  &:hover {
-    background-color: transparent;
-    border-color: var(--primary);
+.btn-circle__lockToggle--active, .btn-circle__lockToggle:hover {
+  background-color: transparent;
+  border-color: var(--primary);
 
-    .btn-circle__lockToggle-icon path {
-      fill: var(--primary);
-    }
+  .btn-circle__lockToggle-icon path {
+    fill: var(--primary);
   }
 }
 
@@ -91,7 +91,7 @@ $progress-width: 12px;
   stroke-dasharray: 534;
   transition: stroke-dashoffset 1s;
   stroke-dashoffset: 0;
-  animation: drawCircle 2s;
+  animation: drawCircle 3s;
   -webkit-animation-play-state: running;
   -moz-transform: rotate(-89deg) translateX(-190px); /* firefox bug fix - won't rotate at 90deg angles */
 }
