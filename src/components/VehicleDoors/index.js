@@ -37,12 +37,13 @@ export class VehicleDoors extends Component {
       >
         {/*Loader*/}
         <g
-          className={clsx('fl-vehicle-doors__loader', {
+          className={clsx('fl-vehicle-doors__loader fl-vehicle-doors__stroke', {
             'fl-vehicle-doors__loader--hide': doors
           })}
           transform="scale(0.8) translate(145 267)"
           strokeWidth="2"
           stroke="#05A4DE"
+          fill="none"
         >
           <circle strokeOpacity=".5" cx="18" cy="18" r="18" />
           <path
@@ -60,7 +61,12 @@ export class VehicleDoors extends Component {
           </path>
         </g>
 
-        <g fill="none" fillRule="evenodd" stroke="#05A4DE">
+        <g
+          fill="none"
+          fillRule="evenodd"
+          stroke="#05A4DE"
+          className="fl-vehicle-doors__stroke"
+        >
           {/*Car Body*/}
           <path
             strokeWidth="1.5"

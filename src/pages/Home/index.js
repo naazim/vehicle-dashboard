@@ -4,6 +4,7 @@ import { setTheme } from '../../helpers/setTheme';
 import { Header } from '../../components/Header';
 import { Nav } from '../../components/Nav';
 import { VehicleDetail } from '../../components/VehicleDetail';
+import { ThemeContext } from '../../context/theme';
 import { ReactComponent as PreoaderIcon } from '../../assets/preloader.svg';
 
 class Home extends Component {
@@ -50,20 +51,22 @@ class Home extends Component {
     const { vehicleData, theme, isLoading } = this.state;
 
     return (
-      <div className={clsx('fl-container', `theme-${theme}`)}>
-        <Nav onVehicleClick={this.onVehicleClick} />
-        <div className="fl-content">
-          <Header toggleTheme={this.toggleTheme} currentTheme={theme} />
-          {isLoading && (
-            <div className="preloader">
-              <PreoaderIcon className="preloader__spinner" />
-            </div>
-          )}
-          {vehicleData && (
-            <VehicleDetail vehicleData={vehicleData} isLoading={isLoading} />
-          )}
+      <ThemeContext.Provider value={{ theme }}>
+        <div className={clsx('fl-container', `theme-${theme}`)}>
+          <Nav onVehicleClick={this.onVehicleClick} />
+          <div className="fl-content">
+            <Header toggleTheme={this.toggleTheme} currentTheme={theme} />
+            {isLoading && (
+              <div className="preloader">
+                <PreoaderIcon className="preloader__spinner" />
+              </div>
+            )}
+            {vehicleData && (
+              <VehicleDetail vehicleData={vehicleData} isLoading={isLoading} />
+            )}
+          </div>
         </div>
-      </div>
+      </ThemeContext.Provider>
     );
   }
 }

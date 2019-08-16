@@ -6,7 +6,6 @@ export const themeOptions = [
     '--bg-secondary': '#001439',
     '--bg-header': '#ffffff',
     '--text-primary': '#001e50',
-    '--text-alternate': '#666666',
     '--text-secondary': '#b3b3b3',
     name: 'light'
   },
@@ -17,7 +16,6 @@ export const themeOptions = [
     '--bg-secondary': '#1f1f1f',
     '--bg-header': 'transparent',
     '--text-primary': '#ffffff',
-    '--text-alternate': '#cd626a',
     '--text-secondary': '#363b4e',
     name: 'dark'
   }

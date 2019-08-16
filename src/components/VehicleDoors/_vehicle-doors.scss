@@ -4,6 +4,10 @@
   margin-left: $spacing-l;
 }
 
+.fl-vehicle-doors__stroke {
+  stroke: var(--primary);
+}
+
 .fl-vehicle-doors__loader {
   transition: opacity $transition-time ease-in;
 
