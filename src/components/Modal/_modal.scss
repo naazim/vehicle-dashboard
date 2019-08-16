@@ -9,6 +9,14 @@
   width: 80%;
   padding: $spacing-l;
   text-transform: capitalize;
+
+  @include media('>=large') {
+    width: 60%;
+  }
+
+  @include media('>=xlarge') {
+    width: 80%;
+  }
 }
 
 .fl-modal__overlay {
