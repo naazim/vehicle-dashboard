@@ -4,6 +4,14 @@
   margin-left: $spacing-l;
 }
 
+.fl-vehicle-doors__loader {
+  transition: opacity $transition-time ease-in;
+
+  &--hide {
+    opacity: 0;
+  }
+}
+
 .fl-vehicle-doors__rear-left, .fl-vehicle-doors__rear-right, .fl-vehicle-doors__front-left, .fl-vehicle-doors__front-right {
   transition: opacity $transition-time ease-in $transition-time/2, transform $transition-time ease-in;
 
