@@ -11,7 +11,7 @@ export class VehicleDoors extends Component {
     fetch(API_FLEET_VEHICLE_DOORS_URL)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        console.log(data.data.access.doors);
         this.setState({ doors: data.data.access.doors });
       })
       .catch(console.log);
