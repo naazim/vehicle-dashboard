@@ -1,13 +1,17 @@
-$profile-pic-size: 58px;
+$profile-pic-size-m: 44px;
+$profile-pic-size-l: 58px;
 
 .fl-user {
   display: flex;
 }
 
 .fl-user__pic {
-  width: $profile-pic-size;
-  height: $profile-pic-size;
+  width: $profile-pic-size-m;
   border-radius: 100%;
+
+  @include media('>=xlarge') {
+    width: $profile-pic-size-l;
+  }
 }
 
 .fl-user__name {

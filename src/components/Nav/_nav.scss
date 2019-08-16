@@ -3,9 +3,13 @@
   flex-direction: column;
   background-color: var(--bg-primary);
   position: relative;
-  width: $nav-panel-width;
+  width: $nav-panel-width-m;
   box-shadow: 0 2px 44px 0 rgba(0, 0, 0, 0);
   transition: margin-left $transition-time ease-in, background-color $transition-time ease-in, box-shadow $transition-time ease-in;
+
+  @include media('>=xlarge') {
+    width: $nav-panel-width-l;
+  }
 }
 
 .fl-nav--open {
@@ -22,11 +26,19 @@
 }
 
 .fl-nav--closed {
-  margin-left: -$nav-panel-width;
+  margin-left: -$nav-panel-width-m;
+
+  @include media('>=xlarge') {
+    margin-left: -$nav-panel-width-l;
+  }
 
   + .fl-content .fl-theme-switcher {
     transition: transform $transition-time ease-in, color $transition-time ease-in;
-    transform: translateX($spacing-l);
+    transform: translateX(46px);
+
+    @include media('>=xlarge') {
+      transform: translateX($spacing-l);
+    }
   }
 }
 
@@ -42,9 +54,13 @@
 }
 
 .fl-nav__logo {
-  width: $logo-width;
-  height: $logo-height;
-  margin-left: $spacing-m;
+  width: $logo-width-m;
+  margin-left: $spacing-s;
+
+  @include media('>=xlarge') {
+    width: $logo-width-l;
+    margin-left: $spacing-m;
+  }
 
   path {
     fill: var(--secondary);
@@ -55,15 +71,24 @@
 
 .fl-hamburger {
   transition: transform $transition-time ease-in, filter $transition-time ease-in;
-  width: 78px;
-  height: 78px;
+  width: 56px;
+  height: 100%;
+
+  @include media('>=xlarge') {
+    width: 78px;
+  }
 
   .fl-nav--closed & {
-    transform: translateX(76px);
+    transform: translateX(64px);
+
+    @include media('>=xlarge') {
+      transform: translateX(76px);
+    }
   }
 }
 
 .fl-hamburger__icon {
+  width: 24px;
   path {
     fill: var(--secondary);
     transition: fill $transition-time ease-in;

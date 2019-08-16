@@ -6,7 +6,7 @@ html, body, #root {
 }
 
 html {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 
   @include media('>=xlarge') {
     font-size: 1rem;
@@ -47,7 +47,7 @@ img {
   right: 0;
   bottom: 0;
   top: $header-height-m;
-  left: $nav-panel-width;
+  left: $nav-panel-width-l;
   z-index: 99999;
 }
 

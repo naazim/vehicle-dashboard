@@ -13,7 +13,7 @@
   font-size: 1.25rem;
   border-radius: 3rem;
   min-width: 9rem;
-  height: $btn-height;
+  height: $btn-height-l;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -46,10 +46,15 @@ button:not(:disabled) {
 
 .btn-circle {
   background-color: var(--primary);
-  height: $btn-height;
-  width: $btn-height;
+  height: $btn-height-m;
+  width: $btn-height-m;
   border-radius: 100%;
   transition: background-color $transition-time ease-in;
+
+  @include media('>=xlarge') {
+    height: $btn-height-l;
+    width: $btn-height-l;
+  }
 
   path {
     fill: $white;

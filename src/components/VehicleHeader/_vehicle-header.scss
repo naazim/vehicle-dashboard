@@ -1,8 +1,12 @@
 .fl-vehicle-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: $spacing-l;
+  margin-bottom: $spacing-m;
   align-items: center;
+
+  @include media('>=xlarge') {
+    margin-bottom: $spacing-l;
+  }
 }
 
 .fl-vehicle-header__name {

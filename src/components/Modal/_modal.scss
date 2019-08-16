@@ -14,8 +14,12 @@
 .fl-modal__overlay {
   background: rgba(0, 0, 0, 0);
 
+  @include media('>=large') {
+    left: $nav-panel-width-m;
+  }
+
   @include media('>=xlarge') {
-    left: $nav-panel-width;
+    left: $nav-panel-width-l;
   }
 }
 

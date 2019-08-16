@@ -20,7 +20,7 @@
     content: '';
     position: absolute;
     border-top: 2px solid $white;
-    top: $logo-height / 2 - 1;
+    top: $logo-height-l / 2 - 1;
     width: 600px;
   }
 
@@ -36,7 +36,7 @@
 }
 
 .fl-intro__logo {
-  height: $logo-height;
+  height: $logo-height-l;
 }
 
 .fl-intro__title {
