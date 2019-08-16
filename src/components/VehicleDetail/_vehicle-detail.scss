@@ -41,12 +41,16 @@
     color: $iron;
     line-height: 0.8;
     position: absolute;
-    bottom: 270px;
+    bottom: 180px;
     left: 0;
     right: 0;
     z-index: -1;
     opacity: 0.5;
     transition: color $transition-time ease-in, opacity $transition-time ease-in;
+
+    @include media('>=medium') {
+      bottom: 218px;
+    }
 
     @include media('>=large') {
       bottom: 268px;
@@ -93,19 +97,19 @@
 .vehicle-detail__image {
   width: auto;
   position: relative;
-  max-width: 640px;
-  max-height: $image-height;
+  max-width: 100%;
+  height: auto;
 
   @include media('>=medium') {
-    max-width: 80%;
+    height: 248px;
   }
 
   @include media('>=large') {
-    max-width: 50%;
+    height: 298px;
   }
 
   @include media('>=xlarge') {
-    max-width: 900px;
+    height: 458px;
   }
 }
 
