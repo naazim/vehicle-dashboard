@@ -10,29 +10,37 @@ import { ReactComponent as CircleIcon } from '../../assets/circle.svg';
 class VehicleFooter extends Component {
   state = {
     isMapVisible: false,
-    location: { lat: '52.5200', lng: '13.4050' },
+    location: null,
     isLocked: !!this.props.vehicleData.vehicleLockStatus,
     isLockPressed: false
   };
 
+  componentDidMount() {
+    this.getMapLocation();
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.vehicleData.vehicleId !== prevProps.vehicleData.vehicleId) {
-      const vehicleId = this.props.vehicleData.vehicleId;
-      const API_VEHICLE_POSITION_URL = `/vehicle/${vehicleId}/parkingposition`;
-
-      fetch(API_VEHICLE_POSITION_URL)
-        .then(res => res.json())
-        .then(data => {
-          this.setState(() => ({
-            location: {
-              lat: parseFloat(data.latitude),
-              lng: parseFloat(data.longitude)
-            }
-          }));
-        })
-        .catch(console.log);
+      this.getMapLocation();
     }
   }
+
+  getMapLocation = () => {
+    const vehicleId = this.props.vehicleData.vehicleId;
+    const API_VEHICLE_POSITION_URL = `/vehicle/${vehicleId}/parkingposition`;
+
+    fetch(API_VEHICLE_POSITION_URL)
+      .then(res => res.json())
+      .then(data => {
+        this.setState(() => ({
+          location: {
+            lat: parseFloat(data.latitude),
+            lng: parseFloat(data.longitude)
+          }
+        }));
+      })
+      .catch(console.log);
+  };
 
   toggleMapVisibility = () => {
     this.setState(() => ({
@@ -89,49 +97,19 @@ class VehicleFooter extends Component {
           <ModalWrapper data={this.props.vehicleData} />
         </footer>
 
-        <Map
-          className={clsx('vehicle-detail__map', {
-            'vehicle-detail__map--active': isMapVisible
-          })}
-          center={location}
-          theme="normal.day"
-        />
+        {console.log(location)}
+        {!!location && (
+          <Map
+            className={clsx('vehicle-detail__map', {
+              'vehicle-detail__map--active': isMapVisible
+            })}
+            center={location}
+            theme="normal.day"
+          />
+        )}
       </>
     );
   }
 }
 
 export { VehicleFooter };
-
-/*
-{
-    "chargingStatus": {
-    "carCapturedTimestamp": "2019-08-13T13:29:09Z",
-        "remainingChargingTimeToComplete_min": "-1",
-        "chargingState": "off"
-},
-    "plugStatus": {
-    "carCapturedTimestamp": "2019-08-13T13:29:09Z",
-        "plugConnectionState": "disconnected",
-        "plugLockState": "unlocked"
-},
-    "batteryStatus": {
-    "carCapturedTimestamp": "2019-08-13T13:29:09Z",
-        "currentSOC_pct": "15",
-        "cruisingRangeElectric_km": "53"
-},
-    "climatisationStatus": {
-    "remainingClimatisationTime_min": "10",
-        "climatisationState": "off"
-},
-    "windowHeatingStatus": [
-    {
-        "windowLocation": "front",
-        "windowHeatingState": "off"
-    },
-    {
-        "windowLocation": "rear",
-        "windowHeatingState": "off"
-    }
-],
-}*/
