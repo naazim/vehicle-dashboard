@@ -7,10 +7,12 @@ $profile-pic-size-l: 58px;
 
 .fl-user__pic {
   width: $profile-pic-size-m;
+  height: $profile-pic-size-m;
   border-radius: 100%;
 
   @include media('>=xlarge') {
     width: $profile-pic-size-l;
+    height: $profile-pic-size-l;
   }
 }
 
